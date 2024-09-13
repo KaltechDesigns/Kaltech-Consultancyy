@@ -1,0 +1,374 @@
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+@import url("https://fonts.cdnfonts.com/css/azonix");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body {
+  overflow-x: hidden;
+}
+/* ::-webkit-scrollbar{
+  display: none;
+} */
+@font-face {
+  font-family: "Azonix";
+  src: url("/fonts/Azonix.otf") format("otf");
+}
+
+.AzonixFont {
+  font-family: "Azonix", "Oxanium";
+}
+
+.changeWrittingMode {
+  writing-mode: vertical-rl;
+}
+.changeWrittingMode2 {
+  writing-mode: vertical-lr;
+}
+.transformRotate {
+  transform: rotate(179deg);
+}
+
+.hoverAnimationBTN {
+  overflow: hidden;
+  z-index: 5;
+}
+
+.hoverAnimationBTN::before {
+  position: absolute;
+  content: "";
+  background-color: #2c2c2c;
+  width: 10%;
+  height: 10%;
+  top: 65%;
+  left: 10%;
+  z-index: -1;
+  opacity: 0;
+  border-radius: 99999px;
+  transition: all 0.4s ease-in-out;
+}
+.hoverAnimationBTN:hover {
+  color: white;
+}
+.hoverAnimationBTN:hover::before {
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  opacity: 1;
+
+  /* background-color: #2c2c2c; */
+}
+
+.hoverAnimationContactBTN span {
+  transition: transform 0.6s ease-in-out;
+}
+
+.hoverAnimationContactBTN::after {
+  position: absolute;
+  content: "";
+  background-color: #2c2c2c;
+  width: 10%;
+  height: 10%;
+  top: 65%;
+  left: 10%;
+  border-radius: 9999px;
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
+}
+.hoverAnimationContactBTN:hover {
+  color: white;
+}
+.hoverAnimationContactBTN:hover span {
+  transform: rotate(45deg);
+}
+.hoverAnimationContactBTN span svg {
+  fill: #2c2c2c !important;
+}
+.hoverAnimationContactBTN:hover span svg {
+  fill: white !important;
+}
+.hoverAnimationContactBTN:hover::after {
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0%;
+  opacity: 1;
+
+  background-color: #2c2c2c;
+}
+
+.hoverAnimationContactBTNAbout span {
+  transition: transform 0.6s ease-in-out;
+}
+.hoverAnimationContactBTNAbout::after {
+  position: absolute;
+  content: "";
+  background-color: #c99c09;
+  width: 15%;
+  height: 15%;
+
+  transform: translate(45px, 65px);
+  border-radius: 9999px;
+  z-index: -1;
+  opacity: 1;
+  transition: all 0.4s ease-in-out;
+}
+.hoverAnimationContactBTNAbout:hover {
+  color: white;
+}
+.hoverAnimationContactBTNAbout:hover span {
+  transform: rotate(45deg);
+}
+.hoverAnimationContactBTNAbout span svg {
+  fill: #fff !important;
+}
+.hoverAnimationContactBTNAbout:hover span svg {
+  fill: white !important;
+}
+.hoverAnimationContactBTNAbout:hover::after {
+  width: 100%;
+  height: 100%;
+
+  transform: translate(0px, 0px);
+  opacity: 1;
+}
+
+.scroll-section-outer {
+  overflow: hidden;
+}
+
+.scroll-section-inner {
+  height: 100vh;
+  width: 400vw;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.scroll-section {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scroll-section h3 {
+  color: black;
+
+  font-size: 20px;
+  text-transform: uppercase;
+}
+.protfolioShadow {
+  box-shadow: -3px 0px 4px 0px rgba(0, 0, 0, 0.15);
+}
+.testimonialShadow {
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+}
+.testimonialCardBC {
+  background: linear-gradient(159deg, #fff 2.59%, #e5e5e5 94.93%);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.borderGradient {
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, #000 0.01%, rgba(0, 0, 0, 0) 100%);
+  border-image-slice: 1;
+}
+
+.blogShadow {
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.homeFooterBTNShadow {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 2px 2px 50px 15px rgb(228 19 246 / 0.2),
+    -2px -2px 50px 15px rgb(228 19 246 / 0.2);
+  /* box-shadow: 2px 2px 50px 15px inherit,
+    -2px -2px 50px 15px inherit; */
+  animation: changeBG 15s linear infinite;
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+#rotatingDiv {
+  background: conic-gradient(
+    from var(--angle) at 50% 50%,
+    transparent 63%,
+    rgb(255, 0, 140) 90%
+  );
+  animation: 3.5s spin linear infinite, colorChange 15s linear infinite;
+  transition: background 0.3s ease-in-out;
+}
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
+
+@keyframes changeBG {
+  0% {
+    background: rgb(228, 19, 246);
+    box-shadow: 2px 2px 40px 10px rgba(228, 19, 246, 0.2),
+      -2px -2px 40px 10px rgba(228, 19, 246, 0.2);
+  }
+  25% {
+    background: rgb(92, 19, 246);
+    box-shadow: 2px 2px 50px 15px rgba(92, 19, 246, 0.2),
+      -2px -2px 50px 15px rgba(92, 19, 246, 0.2);
+  }
+  50% {
+    background: rgb(19, 178, 246);
+    box-shadow: 2px 2px 50px 15px rgba(19, 178, 246, 0.2),
+      -2px -2px 50px 15px rgba(19, 178, 246, 0.2);
+  }
+  75% {
+    background: rgb(27, 255, 132);
+    box-shadow: 2px 2px 50px 15px rgba(27, 255, 132, 0.2),
+      -2px -2px 50px 15px rgba(27, 255, 132, 0.2);
+  }
+  100% {
+    background: rgb(214, 255, 51);
+    box-shadow: 2px 2px 50px 15px rgba(214, 255, 51, 0.2),
+      -2px -2px 50px 15px rgba(214, 255, 51, 0.2);
+  }
+}
+@keyframes colorChange {
+  0% {
+    border-top-color: #800080;
+    /* background: conic-gradient(from var(--angle) at 50% 50%, rgba(18, 18, 18, 1) 63%, #5C13F6 100%); */
+    background: conic-gradient(
+      from var(--angle) at 50% 50%,
+      transparent 63%,
+      rgb(241, 88, 255) 90%
+    );
+  }
+  25% {
+    border-top-color: #c91ac9;
+    background: conic-gradient(
+      from var(--angle) at 50% 50%,
+      transparent 50%,
+      rgb(125, 67, 248) 74%
+    );
+  }
+  50% {
+    border-top-color: #0000ff;
+    background: conic-gradient(
+      from var(--angle) at 50% 50%,
+      transparent 50%,
+      rgb(77, 193, 243) 74%
+    );
+  }
+  75% {
+    border-top-color: #d1d153;
+    background: conic-gradient(
+      from var(--angle) at 50% 50%,
+      transparent 50%,
+      rgb(104, 250, 172) 74%
+    );
+  }
+  100% {
+    border-top-color: #800080;
+    background: conic-gradient(
+      from var(--angle) at 50% 50%,
+      transparent 50%,
+      rgb(224, 248, 127) 74%
+    );
+  }
+}
+
+
+
+.customMargin:nth-child(even) {
+  margin-top: 100px;
+}
+
+.afterEffect:last-child::after {
+  display: none;
+}
+
+.afterEffect::after {
+  position: absolute;
+  content: "--------";
+  font-family: "Azonix", "Oxanium";
+  right: -55%;
+  font-size: 25px;
+  font-weight: 400;
+}
+.afterEffectTab::after {
+  position: absolute;
+  content: "--------";
+  font-family: "Azonix", "Oxanium";
+  right: -55%;
+  font-size: 25px;
+  font-weight: 400;
+  z-index: -1;
+}
+.afterEffectTab:nth-child(2)::after {
+  left: -55%;
+  z-index: -1;
+}
+
+.customShadow {
+  box-shadow: 0px 0px 7.3px 0px rgba(0, 0, 0, 0.27);
+}
+
+.customHoverForLastElemen {
+  transition: all 0.5s ease-in-out;
+}
+
+.customHoverForLastElement:last-child:hover {
+  background: #121212;
+}
+.customHoverForLastElement:nth-last-child(2):hover {
+  background: #121212;
+}
+
+.serviceCustomHoverEffect {
+  background-color: transparent;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in;
+}
+.serviceCustomHoverEffect:hover {
+  background-color: #c5daff !important;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in;
+}
+.trendingBlogBg {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+}
+
+.spanEle {
+  transform: translateX(53px);
+  border-radius: 99999px;
+  background: linear-gradient(180deg, #bb9406 0%, #433500 100%);
+  transition: all 0.4s ease-in-out;
+}
+.spanEle img {
+  opacity: 0;
+  transition: all 0.6s ease-in-out;
+}
+
+.learMoreBTNcustomHoverEffect:hover .spanEle {
+  height: 100%;
+  width: 100%;
+  transform: translateX(0px);
+}
+.learMoreBTNcustomHoverEffect:hover .spanEle img {
+  opacity: 1;
+}
+
