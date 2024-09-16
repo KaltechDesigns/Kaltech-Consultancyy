@@ -743,7 +743,7 @@ const TrendingBlogMob = () => {
               initial={{ y: "50%", opacity: 0 }}
               whileInView={{ y: "0%", opacity: 1 }}
               transition={{ duration: 0.6, ease: "backInOut", delay: 0.7 }}
-              className="AzonixFont font-[Azonix,Oxanium]  text-4xl font-[400] uppercase text-center my-[6%]"
+              className="AzonixFont font-[Azonix,Oxanium]  text-3xl font-[400] uppercase text-center my-[6%]"
             >
               Trending blogs
             </motion.h3>
@@ -767,7 +767,7 @@ const TrendingBlogMob = () => {
                   fill
                   alt="trending-blog"
                   loading="lazy"
-                  className="object-cover"
+                  className="object-cover brightness-75"
                 />
                 <div className="absolute w-full h-full top-0 left-0 bg-transparent flex justify-end items-end">
                   <div className=" h-[50%] w-full px-2 py-3 trendingBlogBg flex flex-col justify-end items-start">
@@ -775,58 +775,17 @@ const TrendingBlogMob = () => {
                       id="blogHeading"
                       className="font-[Oxanium] blogHeading font-[700] text-base text-[#FFF]"
                     >
-                      How Important is Branding to Promote Your Business?
+                     {blogData[0].mainTitle}
                     </h3>
                     <p
                       id="smallInfo"
-                      className="font-[Oxanium] smallInfo font-[400] text-sm my-1 text-[#FFF]"
+                      className="font-[Oxanium] smallInfo font-[400] text-sm my-1 text-[#FFF] line-clamp-3"
                     >
-                      In the modern business landscape, branding is not just a
-                      buzzword; it is a critical aspect of a company&apos;s
-                      strategy for growth and sustainability. Branding
-                      encompasses the creation of a unique identity for a
-                      business through elements such as a logo, tagline, and
-                      consistent messaging.
+                     {blogData[0].mainInfo}
                     </p>
-                    <motion.button
-                      id="readMoreBTN"
-                      onClick={() => router.push(`blog/1`)}
-                      initial={{ y: "60%", opacity: 0 }}
-                      whileInView={{ y: "0%", opacity: 1 }}
-                      transition={{ duration: 0.6, ease: "circInOut" }}
-                      className="flex justify-center items-center gap-3 cursor-pointer bg-[#000] rounded-full w-[50%] text-[#FFF] py-3 font-[Oxanium] font-[600] mt-1 "
-                    >
-                      Read more{" "}
-                      <span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 12 12"
-                          fill="none"
-                        >
-                          <circle
-                            cx="6"
-                            cy="6"
-                            r="6"
-                            fill="url(#paint0_linear_65_66)"
-                          />
-                          <defs>
-                            <linearGradient
-                              id="paint0_linear_65_66"
-                              x1="6"
-                              y1="0"
-                              x2="6"
-                              y2="12"
-                              gradientUnits="userSpaceOnUse"
-                            >
-                              <stop stop-color="#BB9406" />
-                              <stop offset="1" stop-color="#433500" />
-                            </linearGradient>
-                          </defs>
-                        </svg>
-                      </span>
-                    </motion.button>
+                    <div id="readMoreBTN">
+                      <LearnMoreBTN innerText="Read More" path={`/blog/${blogData[0].id}?bn=${blogData[0].mainTitle}`} />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -842,68 +801,23 @@ const TrendingBlogMob = () => {
                 className="relative h-[20%] w-full"
               >
                 <Image
-                  src={BlogHeroImg2}
+                  src={`/${blogData[7].featureImg}`}
                   fill
                   alt="trending-blog"
                   loading="lazy"
-                  className="object-cover"
+                  className="object-cover brightness-75"
                 />
                 <div className="absolute w-full h-full top-0 left-0 bg-transparent flex justify-end items-end">
                   <div className=" h-[50%] w-full px-2 py-3 trendingBlogBg flex flex-col justify-end items-start">
                     <h3 className="font-[Oxanium] blogHeading font-[700] text-base text-[#FFF] ">
-                      E-commers Tips and Tricks
+                    {blogData[7].mainTitle}
                     </h3>
-                    <p className="font-[Oxanium] smallInfo font-[400] text-sm my-1 text-[#FFF] hidden">
-                      E-commerce has revolutionized the way businesses operate
-                      and consumers shop, providing convenience, a wider range
-                      of products, and competitive pricing structures. It
-                      encompasses various models, including business-to-consumer
-                      (B2C), business-to-business (B2B), consumer-to-consumer
-                      (C2C), and direct-to-consumer (D2C), allowing businesses
-                      of all sizes to reach global markets. With the rise of
-                      mobile technology, secure payment systems, and advanced
-                      logistics, e-commerce continues to grow, shaping the
-                      future of retail and business transactions worldwide.
+                    <p className="font-[Oxanium] smallInfo font-[400] text-sm my-1 text-[#FFF] hidden line-clamp-3">
+                      {blogData[7].mainInfo}
                     </p>
-                    <motion.button
-                      id="readMoreBTN"
-                      onClick={() => router.push(`blog/2`)}
-                      initial={{ y: "60%", opacity: 0 }}
-                      whileInView={{ y: "0%", opacity: 1 }}
-                      transition={{ duration: 0.6, ease: "circInOut" }}
-                      className=" justify-center items-center gap-3 cursor-pointer bg-[#000] rounded-full w-[50%] text-[#FFF] py-3 font-[Oxanium] font-[600] mt-1 hidden"
-                    >
-                      Read more{" "}
-                      <span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 12 12"
-                          fill="none"
-                        >
-                          <circle
-                            cx="6"
-                            cy="6"
-                            r="6"
-                            fill="url(#paint0_linear_65_66)"
-                          />
-                          <defs>
-                            <linearGradient
-                              id="paint0_linear_65_66"
-                              x1="6"
-                              y1="0"
-                              x2="6"
-                              y2="12"
-                              gradientUnits="userSpaceOnUse"
-                            >
-                              <stop stop-color="#BB9406" />
-                              <stop offset="1" stop-color="#433500" />
-                            </linearGradient>
-                          </defs>
-                        </svg>
-                      </span>
-                    </motion.button>
+                    <div id="readMoreBTN">
+                      <LearnMoreBTN innerText="Read More" path={`/blog/${blogData[7].id}?bn=${blogData[7].mainTitle}`} />
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -916,65 +830,24 @@ const TrendingBlogMob = () => {
                 className="relative h-[20%] w-full"
               >
                 <Image
-                  src={BlogHeroImg3}
+                  src={`/${blogData[6].featureImg}`}
                   fill
                   alt="trending-blog"
                   loading="lazy"
-                  className="object-cover"
+                  className="object-cover brightness-75"
                 />
                 <div className="absolute w-full h-full top-0 left-0 bg-transparent flex justify-end items-end">
-                  <div className=" h-[50%] w-full px-2 py-3 trendingBlogBg flex flex-col justify-end items-start">
+                  <div className=" h-[80%] w-full px-2 py-3 trendingBlogBg flex flex-col justify-end items-start">
                     <h3 className="font-[Oxanium] blogHeading font-[700] text-base text-[#FFF]">
-                      Tips for networking my business in my community
+                    {blogData[6].mainTitle}
                     </h3>
-                    <p className="font-[Oxanium] smallInfo font-[400] text-sm my-1 text-[#FFF] hidden">
-                      Networking your business within your local community is a
-                      powerful way to build relationships, establish trust, and
-                      create opportunities for growth. By engaging with local
-                      businesses, attending community events, and being an
-                      active member of local groups, you can connect with
-                      potential clients, partners, and supporters who are
-                      invested in the success of the community..
+                    <p className="font-[Oxanium] smallInfo font-[400] text-sm my-1 text-[#FFF] hidden line-clamp-3">
+                    {blogData[6].mainTitle}
                     </p>
-                    <motion.button
-                      id="readMoreBTN"
-                      onClick={() => router.push(`blog/3`)}
-                      initial={{ y: "60%", opacity: 0 }}
-                      whileInView={{ y: "0%", opacity: 1 }}
-                      transition={{ duration: 0.6, ease: "circInOut" }}
-                      className="hidden justify-center items-center gap-3 cursor-pointer bg-[#000] rounded-full w-[50%] text-[#FFF] py-3 font-[Oxanium] font-[600] mt-1 "
-                    >
-                      Read more{" "}
-                      <span>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="12"
-                          height="12"
-                          viewBox="0 0 12 12"
-                          fill="none"
-                        >
-                          <circle
-                            cx="6"
-                            cy="6"
-                            r="6"
-                            fill="url(#paint0_linear_65_66)"
-                          />
-                          <defs>
-                            <linearGradient
-                              id="paint0_linear_65_66"
-                              x1="6"
-                              y1="0"
-                              x2="6"
-                              y2="12"
-                              gradientUnits="userSpaceOnUse"
-                            >
-                              <stop stop-color="#BB9406" />
-                              <stop offset="1" stop-color="#433500" />
-                            </linearGradient>
-                          </defs>
-                        </svg>
-                      </span>
-                    </motion.button>
+
+                    <div id="readMoreBTN">
+                      <LearnMoreBTN innerText="Read More" path={`/blog/${blogData[6].id}?bn=${blogData[6].mainTitle}`}/>
+                    </div>
                   </div>
                 </div>
               </div>

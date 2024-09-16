@@ -13,7 +13,7 @@ export const Footer = () => {
   return (
     <div className="bg-[#000] flex justify-center items-center py-8 md:py-16 lg:py-16 xl:py-16 2xl:py-16">
       <div className="w-[90%] md:w-[80%] lg:w-[80%] xl:w-[80%] 2xl:w-[80%] flex flex-col justify-center items-center">
-        <div className="relative h-12 w-[50%] my-4 md:my-0 lg:my-0 xl:my-0 2xl:my-0">
+        <div className="relative 2xl:h-12 xl:h-12 lg:h-10 md:h-9 h-8 w-[50%] my-4 md:my-0 lg:my-0 xl:my-0 2xl:my-0">
           <Image fill loading="lazy" alt="logo" src={Logo} />
         </div>
         <ul className="flex justify-around items-center flex-wrap gap-2 w-full md:w-[65%] lg:w-[65%] xl:w-[65%] 2xl:w-[65%] my-[4%] md:my-[2%] lg:my-[2%] xl:my-[2%] 2xl:my-[2%]">
@@ -31,7 +31,7 @@ export const Footer = () => {
               key={id}
             >
               <Link
-                className="font-[Oxanium] text-[#D6D6D6] font-[400] text-lg uppercase"
+                className="font-[Oxanium] text-[#D6D6D6] font-[400] 2xl:text-lg xl:text-lg lg:text-base md:text-sm text-sm uppercase"
                 href={cur.path}
               >
                 {cur.title}
@@ -97,7 +97,7 @@ export const Footer = () => {
         </div>
 
         <div className="border-t-[2px] border-[#FFFFFF]/30 w-full ">
-          <p className="text-center text-white py-4 text-sm md:text-xl lg:text-xl xl:text-xl 2xl:text-xl font-[Oxanium] font-[400]">
+          <p className="text-center text-white py-4 text-[12px]  font-[Oxanium] font-[400]">
             <span className="text-[#FFFFFF]/50">
               © 2024 | Alrights reserved by
             </span>{" "}

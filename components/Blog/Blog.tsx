@@ -95,14 +95,19 @@ export const Blog = () => {
                   className="w-[95%] border border-[#D9D9D9] blogShadow"
                 >
                   <div className="relative h-80 2xl:h-96">
-                    <Image className="object-cover" fill src={`/${blogData[0].featureImg}`} alt="blog-image" />
+                    <Image
+                      className="object-cover"
+                      fill
+                      src={`/${blogData[0].featureImg}`}
+                      alt="blog-image"
+                    />
                   </div>
                   <div className="w-[90%] mx-auto my-5 2xl:my-10">
                     <h4 className="font-[Oxanium] text-lg 2xl:text-2xl font-[700]">
                       {blogData[0].mainTitle}
                     </h4>
-                    <p className="font-[Oxanium] text-base 2xl:text-base lg:text-sm xl:text-base 2xl:font-[400] xl:font-[100] my-1 2xl:my-3 line-clamp-3">
-                     {blogData[0].mainInfo}
+                    <p className="font-[Oxanium] text-base 2xl:text-base lg:text-sm xl:text-sm 2xl:font-[400] xl:font-[300] my-1 2xl:my-3 line-clamp-3">
+                      {blogData[0].mainInfo}
                     </p>
 
                     <div className="border-t-2 border-[#D9D9D9] flex justify-between items-center p-3 mt-3 2xl:mt-10">
@@ -137,12 +142,16 @@ export const Blog = () => {
                           </svg>
                         </div>
                         <h4 className="font-[Kanit] text-md font-[300]">
-                          September 1, 2024
+                          {blogData[0].createdDate}
                         </h4>
                       </div>
                       <button
                         id="BTN-1"
-                        onClick={() => router.push(`blog/${blogData[0].id}?bn=${blogData[0].mainTitle}`)}
+                        onClick={() =>
+                          router.push(
+                            `blog/${blogData[0].id}?bn=${blogData[0].mainTitle}`
+                          )
+                        }
                         onMouseEnter={() => handleHoverAnimate("BTN-1")}
                         onMouseLeave={() => handleLeaveAnimate("BTN-1")}
                         className="font-[Kanit] flex justify-center items-center gap-2 text-md font-[300] underline"
@@ -175,7 +184,7 @@ export const Blog = () => {
                 transition={{ duration: 0.6, ease: "circInOut", delay: 0.7 }}
                 className="w-[50%] flex flex-col justify-start items-start gap-3 2xl:gap-6"
               >
-                {blogData.slice(1,4).map((cur, id) => (
+                {blogData.slice(1, 4).map((cur, id) => (
                   <div
                     key={id}
                     className="2xl:p-6 p-3 border border-[#D9D9D9] blogShadow w-full"
@@ -211,19 +220,21 @@ export const Blog = () => {
                         </svg>
                       </div>
                       <h4 className="font-[Kanit] text-md font-[300]">
-                      August 1, 2024
+                        {cur.createdDate}
                       </h4>
                     </div>
-                    <h3 className="font-[Oxanium] text-lg 2xl:text-2xl font-[700] my-5">
+                    <h3 className="font-[Oxanium] lg:text-base 2xl:text-2xl font-[700] my-5">
                       {cur.mainTitle}
                     </h3>
-                    <p className="font-[Oxanium] text-base 2xl:text-base lg:text-sm xl:text-base 2xl:font-[400] xl:font-[100] my-1 2xl:my-3 line-clamp-1">
-                     {cur.mainInfo}
+                    <p className="font-[Oxanium] text-sm 2xl:text-base lg:text-sm xl:text-sm 2xl:font-[400] xl:font-[300] my-1 2xl:my-3 line-clamp-1">
+                      {cur.mainInfo}
                     </p>
 
                     <button
                       id={`BTN-${id + 2}`}
-                      onClick={() => router.push(`blog/${cur.id}?bn=${cur.mainTitle}`)}
+                      onClick={() =>
+                        router.push(`blog/${cur.id}?bn=${cur.mainTitle}`)
+                      }
                       onMouseEnter={() => handleHoverAnimate(`BTN-${id + 2}`)}
                       onMouseLeave={() => handleLeaveAnimate(`BTN-${id + 2}`)}
                       className="font-[Kanit] text-md font-[300] flex justify-center items-center gap-2 underline"
@@ -278,7 +289,7 @@ const BlogTab = () => {
               <div className="h-80 flex justify-center items-start border border-[#D9D9D9] blogShadow">
                 <div className="relative h-full w-[50%]">
                   <Image
-                    src={BlogImg1}
+                    src={`/${blogData[0].featureImg}`}
                     fill
                     alt="blogImg"
                     className="object -cover"
@@ -286,13 +297,10 @@ const BlogTab = () => {
                 </div>
                 <div className="w-[50%] p-3">
                   <h4 className="font-[Oxanium] text-2xl font-[700]">
-                    Lorem ipsum dolor sit amet, consectetur.
+                    {blogData[0].mainTitle}
                   </h4>
-                  <p className="text-base font-[400] font-[Oxanium] my-1">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenean eu ullamcorper libero. Nunc malesuada sem vel mauris
-                    viverra lobortis. Maecenas sodales sollicitudin leo nec
-                    eleifend.
+                  <p className="text-base font-[400] font-[Oxanium] my-1 line-clamp-6">
+                    {blogData[0].mainInfo}
                   </p>
                   <div className="border-t-2 border-[#D9D9D9] flex justify-between items-center p-3 mt-4">
                     <div className="flex justify-start items-center gap-2">
@@ -326,11 +334,15 @@ const BlogTab = () => {
                         </svg>
                       </div>
                       <h4 className="font-[Kanit] text-md font-[300]">
-                        April 21, 2024
+                        {blogData[0].createdDate}
                       </h4>
                     </div>
                     <button
-                      onClick={() => router.push(`blog/1`)}
+                      onClick={() =>
+                        router.push(
+                          `blog/${blogData[0].id}?bn=${blogData[0].mainTitle}`
+                        )
+                      }
                       className="font-[Kanit] text-md font-[300] underline"
                     >
                       Read More
@@ -345,7 +357,7 @@ const BlogTab = () => {
                 transition={{ duration: 0.6, ease: "circInOut", delay: 0.7 }}
                 className="w-full flex flex-col justify-start items-start gap-4 mt-4"
               >
-                {[1, 2, 3].map((cur, id) => (
+                {blogData.slice(1, 4).map((cur, id) => (
                   <div
                     key={id}
                     className="2xl:p-6 p-3 border border-[#D9D9D9] blogShadow w-full"
@@ -381,16 +393,18 @@ const BlogTab = () => {
                         </svg>
                       </div>
                       <h4 className="font-[Kanit] text-md font-[300]">
-                        April 21, 2024
+                      {cur.createdDate}
                       </h4>
                     </div>
                     <h3 className="font-[Oxanium] text-lg 2xl:text-2xl font-[700] my-5">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Aenean eu ullamcorper libero.
+                      {cur.mainTitle}
                     </h3>
+                    <p className="text-sm font-[Oxanium] font-[400] line-clamp-1">
+                      {cur.mainInfo}
+                    </p>
 
                     <button
-                      onClick={() => router.push(`blog/${id + 2}`)}
+                      onClick={() => router.push(`blog/${cur.id}?bn=${cur.mainTitle}`)}
                       className="font-[Kanit] text-md font-[300] underline"
                     >
                       Read More
@@ -424,7 +438,8 @@ const BlogMob = () => {
             <div className="h-96 flex flex-col justify-center items-start border border-[#D9D9D9] blogShadow">
               <div className="relative h-[50%] w-full">
                 <Image
-                  src={BlogImg1}
+                  src={`/${blogData[0].featureImg}`}
+
                   fill
                   alt="blogImg"
                   className="object-cover"
@@ -432,13 +447,10 @@ const BlogMob = () => {
               </div>
               <div className="w-full h-[50%] p-2">
                 <h4 className="font-[Oxanium] text-base font-[700]">
-                  Lorem ipsum dolor sit amet, consectetur.
+                  {blogData[0].mainTitle}
                 </h4>
-                <p className="text-[14px] font-[400] font-[Oxanium] my-1">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Aenean eu ullamcorper libero. Nunc malesuada sem vel mauris
-                  viverra lobortis. Maecenas sodales sollicitudin leo nec
-                  eleifend.
+                <p className="text-[13px] font-[400] font-[Oxanium] my-1 line-clamp-4">
+                {blogData[0].mainInfo}
                 </p>
                 <div className="border-t-2 border-[#D9D9D9] flex justify-between items-center py-3 px-0 mt-1">
                   <div className="flex justify-start items-center gap-1">
@@ -472,11 +484,13 @@ const BlogMob = () => {
                       </svg>
                     </div>
                     <h4 className="font-[Kanit] text-[12px] font-[300]">
-                      April 21, 2024
+                    {blogData[0].createdDate}
                     </h4>
                   </div>
                   <button
-                    onClick={() => router.push(`blog/1`)}
+                    onClick={() =>       router.push(
+                      `blog/${blogData[0].id}?bn=${blogData[0].mainTitle}`
+                    )}
                     className="font-[Kanit] text-[14px] font-[300] underline"
                   >
                     Read More
@@ -491,10 +505,10 @@ const BlogMob = () => {
               transition={{ duration: 0.6, ease: "circInOut", delay: 0.7 }}
               className="w-full flex flex-col justify-start items-start gap-2 mt-2"
             >
-              {[1, 2, 3].map((cur, id) => (
+              {blogData.slice(1, 4).map((cur, id) => (
                 <div
                   key={id}
-                  className="p-4 border border-[#D9D9D9] blogShadow"
+                  className="p-4 border border-[#D9D9D9] blogShadow w-full"
                 >
                   <div className="flex justify-start items-center gap-4">
                     <div>
@@ -527,16 +541,16 @@ const BlogMob = () => {
                       </svg>
                     </div>
                     <h4 className="font-[Kanit] text-[12px] font-[300]">
-                      April 21, 2024
+                      {cur.createdDate}
                     </h4>
                   </div>
                   <h3 className="font-[Oxanium] text-sm font-[700] my-2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenean eu ullamcorper libero.
+                   {cur.mainTitle}
                   </h3>
+                  <p className="line-clamp-1 font-[Oxanium] text-[12px] font-[400]">{cur.mainInfo}</p>
 
                   <button
-                    onClick={() => router.push(`blog/${id + 2}`)}
+                    onClick={() => router.push(`blog/${cur.id}?bn=${cur.mainTitle}`)}
                     className="font-[Kanit] text-sm font-[300] underline"
                   >
                     Read More

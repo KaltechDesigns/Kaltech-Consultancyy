@@ -61,12 +61,12 @@ const BlogID = () => {
       <Navbar />
       <div className="">
         <div className="h-screen flex justify-center items-center">
-          <div className="w-[80%] h-[90%] flex flex-col justify-center items-center gap-5">
+          <div className="2xl:w-[80%] w-[90%] h-[90%] flex flex-col justify-center items-center gap-5">
             <motion.h1
               initial={{ x: "-100%" }}
               whileInView={{ x: "0%" }}
               transition={{ duration: 0.6, ease: "circInOut", delay: 0.1 }}
-              className="uppercase AzonixFont text-center font-[Azonix,Oxanium] font-[400] text-6xl my-6"
+              className="uppercase AzonixFont text-center font-[Azonix,Oxanium] font-[400] 2xl:text-6xl xl:text-5xl lg:text-4xl md:text-2xl text-2xl 2xl:my-6 my-3"
             >
               {currentBlog?.mainTitle}
             </motion.h1>
@@ -97,12 +97,12 @@ const BlogID = () => {
         </div>
 
         <div className=" flex justify-center items-center">
-          <div className="w-[80%]">
-            <h4 className="font-[Oxanium] font-[700] text-3xl text-[#000000] my-4">
+          <div className="2xl:w-[80%] w-[90%]">
+            <h4 className="font-[Oxanium] font-[700] 2xl:text-3xl xl:2xl lg:2xl  md:text-xl text-xl text-[#000000] my-4">
               {currentBlog?.mainTitle}
             </h4>
 
-            <p className="text-lg font-[Oxanium] font-[400] my-5">
+            <p className="2xl:text-lg xl:text-lg lg:text-base md:text-sm text-sm font-[Oxanium] font-[400] my-5">
               {currentBlog?.mainInfo}
             </p>
 
@@ -115,60 +115,60 @@ const BlogID = () => {
               <Image src={BlogImg4} fill loading="lazy" alt="blog-img" />
             </motion.div> */}
 
-            <h4 className="font-[Oxanium] font-[700] text-3xl text-[#000000] my-4">
+            <h4 className="font-[Oxanium] font-[700] 2xl:text-3xl xl:2xl lg:2xl  md:text-xl text-xl text-[#000000] my-4">
               {currentBlog?.headingFrt}
             </h4>
 
-            <p className="text-lg font-[Oxanium] font-[400] my-5">
+            <p className="2xl:text-lg xl:text-lg lg:text-base md:text-sm text-sm font-[Oxanium] font-[400] my-5">
               {currentBlog?.paraFrt}
             </p>
 
-            <h4 className="font-[Oxanium] font-[700] text-3xl text-[#000000] my-4">
+            <h4 className="font-[Oxanium] font-[700] 2xl:text-3xl xl:2xl lg:2xl  md:text-xl text-xl text-[#000000] my-4">
               {currentBlog?.headingSec}
             </h4>
-            <p className="text-lg font-[Oxanium] font-[400] my-5">
+            <p className="2xl:text-lg xl:text-lg lg:text-base md:text-sm text-sm font-[Oxanium] font-[400] my-5">
               {currentBlog?.paraSec}
             </p>
-            <h4 className="font-[Oxanium] font-[700] text-3xl text-[#000000] my-4">
+            <h4 className="font-[Oxanium] font-[700] 2xl:text-3xl xl:2xl lg:2xl  md:text-xl text-xl text-[#000000] my-4">
               {currentBlog?.headingThr}
             </h4>
-            <p className="text-lg font-[Oxanium] font-[400] my-5">
+            <p className="2xl:text-lg xl:text-lg lg:text-base md:text-sm text-sm font-[Oxanium] font-[400] my-5">
               {currentBlog?.paraThr}
             </p>
-            <h4 className="font-[Oxanium] font-[700] text-3xl text-[#000000] my-4">
+            <h4 className="font-[Oxanium] font-[700] 2xl:text-3xl xl:2xl lg:2xl  md:text-xl text-xl text-[#000000] my-4">
               {currentBlog?.headingFur}
             </h4>
-            <p className="text-lg font-[Oxanium] font-[400] my-5">
+            <p className="2xl:text-lg xl:text-lg lg:text-base md:text-sm text-sm font-[Oxanium] font-[400] my-5">
               {currentBlog?.paraFor}
             </p>
-            <h4 className="font-[Oxanium] font-[700] text-3xl text-[#000000] my-4">
+            <h4 className="font-[Oxanium] font-[700] 2xl:text-3xl xl:2xl lg:2xl  md:text-xl text-xl text-[#000000] my-4">
               {currentBlog?.headingFiv}
             </h4>
-            <p className="text-lg font-[Oxanium] font-[400] my-5">
+            <p className="2xl:text-lg xl:text-lg lg:text-base md:text-sm text-sm font-[Oxanium] font-[400] my-5">
               {currentBlog?.paraFiv}
             </p>
-            <h4 className="font-[Oxanium] font-[700] text-3xl text-[#000000] my-4">
+            <h4 className="font-[Oxanium] font-[700] 2xl:text-3xl xl:2xl lg:2xl  md:text-xl text-xl text-[#000000] my-4">
               {currentBlog?.headingSix}
             </h4>
-            <p className="text-lg font-[Oxanium] font-[400] my-5">
+            <p className="2xl:text-lg xl:text-lg lg:text-base md:text-sm text-sm font-[Oxanium] font-[400] my-5">
               {currentBlog?.paraSix}
             </p>
-            <h4 className="font-[Oxanium] font-[700] text-3xl text-[#000000] my-4">
+            <h4 className="font-[Oxanium] font-[700] 2xl:text-3xl xl:2xl lg:2xl  md:text-xl text-xl text-[#000000] my-4">
               {currentBlog?.headingSev}
             </h4>
-            <p className="text-lg font-[Oxanium] font-[400] my-5">
+            <p className="2xl:text-lg xl:text-lg lg:text-base md:text-sm text-sm font-[Oxanium] font-[400] my-5">
               {currentBlog?.paraSev}
             </p>
-            <h4 className="font-[Oxanium] font-[700] text-3xl text-[#000000] my-4">
+            <h4 className="font-[Oxanium] font-[700] 2xl:text-3xl xl:2xl lg:2xl  md:text-xl text-xl text-[#000000] my-4">
               {currentBlog?.headingEig}
             </h4>
-            <p className="text-lg font-[Oxanium] font-[400] my-5">
+            <p className="2xl:text-lg xl:text-lg lg:text-base md:text-sm text-sm font-[Oxanium] font-[400] my-5">
               {currentBlog?.paraEig}
             </p>
-            <h4 className="font-[Oxanium] font-[700] text-3xl text-[#000000] my-4">
+            <h4 className="font-[Oxanium] font-[700] 2xl:text-3xl xl:2xl lg:2xl  md:text-xl text-xl text-[#000000] my-4">
               {currentBlog?.ConclusionHeading}
             </h4>
-            <p className="text-lg font-[Oxanium] font-[400] my-5">
+            <p className="2xl:text-lg xl:text-lg lg:text-base md:text-sm text-sm font-[Oxanium] font-[400] my-5">
               {currentBlog?.conclusion}
             </p>
           </div>

@@ -131,7 +131,7 @@ export const MarketingAndBranding = () => {
             />
           </svg>
         </motion.div>
-        <div className="overflow-hidden top-0 left-0 w-full h-full flex justify-center items-center">
+        <div className="top-0 left-0 w-full h-full flex justify-center items-center">
           <div
             ref={scope}
             className="2xl:w-[80%] xl:w-[90%] lg:w-[90%] max-h-[90%]"
@@ -405,9 +405,13 @@ export const MarketingAndBranding = () => {
                   <>
                     <div
                       key={id}
-                      onMouseEnter={() => handleHoverAnimation(`serviceBrandBox-${id+1}`)}
-                      onMouseLeave={() => handleMouseLeave(`serviceBrandBox-${id+1}`)}
-                      id={`serviceBrandBox-${id+1}`}
+                      onMouseEnter={() =>
+                        handleHoverAnimation(`serviceBrandBox-${id + 1}`)
+                      }
+                      onMouseLeave={() =>
+                        handleMouseLeave(`serviceBrandBox-${id + 1}`)
+                      }
+                      id={`serviceBrandBox-${id + 1}`}
                       className="border border-[#000] 2xl:p-4 xl:p-4 lg:p-2  overflow-hidden h-72"
                     >
                       <div
@@ -428,7 +432,7 @@ export const MarketingAndBranding = () => {
                         id="serviceSmallInfo"
                         className="font-[Oxanium] 2xl:text-base xl:text-sm font-[400] text-[#000]"
                       >
-                       {cur.serviceDes}
+                        {cur.serviceDes}
                       </p>
                       {/* <button
                        
@@ -466,7 +470,7 @@ export const MarketingAndBranding = () => {
                         </span>
                       </button> */}
                       <div id="learnMoreBTN">
-                        <LearnMoreBTN innerText='Contact Us' path='/contact' />
+                        <LearnMoreBTN innerText="Contact Us" path="/contact" />
                       </div>
                     </div>
                   </>
@@ -997,7 +1001,7 @@ const MarketingAndBrandingMob = () => {
             initial={{ opacity: 0, x: "95%" }}
             whileInView={{ opacity: 1, x: "0%" }}
             transition={{ duration: 0.7, ease: "backInOut", delay: 0.4 }}
-            className="AzonixFont font-[Azonix,Oxanium] text-2xl font-[400] text-right"
+            className="AzonixFont font-[Azonix,Oxanium] text-xl font-[400] text-right"
           >
             Marketing Services
           </motion.h4>
@@ -1007,7 +1011,7 @@ const MarketingAndBrandingMob = () => {
               onMouseEnter={() => handleHoverAnimation("serviceBox-1")}
               onMouseLeave={() => handleMouseLeave("serviceBox-1")}
               id="serviceBox-1"
-              className="border border-[#000] p-4 overflow-hidden h-80"
+              className="border border-[#000] p-4 overflow-hidden h-64"
             >
               <div
                 id="serviceIconWrapper"
@@ -1020,58 +1024,26 @@ const MarketingAndBrandingMob = () => {
                   alt="app-dev-icon"
                 />
               </div>
-              <h4 className="font-[Oxanium] text-2xl font-[700] text-[#000] my-4">
+              <h4 className="font-[Oxanium] text-lg font-[700] text-[#000] my-4">
                 Social Media Marketing.
               </h4>
               <p
                 id="serviceSmallInfo"
-                className="font-[Oxanium] text-base font-[400] text-[#000]"
+                className="font-[Oxanium] text-sm font-[400] text-[#000]"
               >
                 Let our social media team engage, inspire and boost your digital
                 presence to increase your brand’s visibility
               </p>
-              <button
-                id="learnMoreBTN"
-                className="flex justify-center items-center gap-3 cursor-pointer bg-[#000] rounded-full w-[50%] text-[#FFF] py-3 font-[Oxanium] font-[600] opacity-0 "
-              >
-                Contact Us{" "}
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="none"
-                  >
-                    <circle
-                      cx="6"
-                      cy="6"
-                      r="6"
-                      fill="url(#paint0_linear_65_66)"
-                    />
-                    <defs>
-                      <linearGradient
-                        id="paint0_linear_65_66"
-                        x1="6"
-                        y1="0"
-                        x2="6"
-                        y2="12"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop stop-color="#BB9406" />
-                        <stop offset="1" stop-color="#433500" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </span>
-              </button>
+              <div id="learnMoreBTN">
+                <LearnMoreBTN innerText="Contact Us" path="/contact" />
+              </div>
             </div>
 
             <div
               onMouseEnter={() => handleHoverAnimation("serviceBox-2")}
               onMouseLeave={() => handleMouseLeave("serviceBox-2")}
               id="serviceBox-2"
-              className="border border-[#000] p-4 overflow-hidden h-80"
+              className="border border-[#000] p-4 overflow-hidden h-64"
             >
               <div
                 id="serviceIconWrapper"
@@ -1084,59 +1056,27 @@ const MarketingAndBrandingMob = () => {
                   alt="app-dev-icon"
                 />
               </div>
-              <h4 className="font-[Oxanium] text-2xl font-[700] text-[#000] my-4">
+              <h4 className="font-[Oxanium] text-lg font-[700] text-[#000] my-4">
                 Email Marketing.
               </h4>
               <p
                 id="serviceSmallInfo"
-                className="font-[Oxanium] text-base font-[400] text-[#000]"
+                className="font-[Oxanium] text-sm font-[400] text-[#000]"
               >
                 Let’s develop strategic and personalized ad campaigns which
                 effectively communicate your services to your targeted
                 demography.
               </p>
-              <button
-                id="learnMoreBTN"
-                className="flex justify-center items-center gap-3 cursor-pointer bg-[#000] rounded-full w-[50%] text-[#FFF] py-3 font-[Oxanium] font-[600] opacity-0 "
-              >
-                Contact Us{" "}
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="none"
-                  >
-                    <circle
-                      cx="6"
-                      cy="6"
-                      r="6"
-                      fill="url(#paint0_linear_65_66)"
-                    />
-                    <defs>
-                      <linearGradient
-                        id="paint0_linear_65_66"
-                        x1="6"
-                        y1="0"
-                        x2="6"
-                        y2="12"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop stop-color="#BB9406" />
-                        <stop offset="1" stop-color="#433500" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </span>
-              </button>
+              <div id="learnMoreBTN">
+                <LearnMoreBTN innerText="Contact Us" path="/contact" />
+              </div>
             </div>
 
             <div
               onMouseEnter={() => handleHoverAnimation("serviceBox-3")}
               onMouseLeave={() => handleMouseLeave("serviceBox-3")}
               id="serviceBox-3"
-              className="border border-[#000] p-4 overflow-hidden h-80"
+              className="border border-[#000] p-4 overflow-hidden h-64"
             >
               <div
                 id="serviceIconWrapper"
@@ -1149,51 +1089,19 @@ const MarketingAndBrandingMob = () => {
                   alt="app-dev-icon"
                 />
               </div>
-              <h4 className="font-[Oxanium] text-2xl font-[700] text-[#000] my-4">
+              <h4 className="font-[Oxanium] text-lg font-[700] text-[#000] my-4">
                 Search Engine Optimiztion.
               </h4>
               <p
                 id="serviceSmallInfo"
-                className="font-[Oxanium] text-base font-[400] text-[#000]"
+                className="font-[Oxanium] text-sm font-[400] text-[#000]"
               >
                 We unlock the power of SEO that optimizes and drives traffic
                 today, to boost the rank of your digital presence tomorrow.
               </p>
-              <button
-                id="learnMoreBTN"
-                className="flex justify-center items-center gap-3 cursor-pointer bg-[#000] rounded-full w-[50%] text-[#FFF] py-3 font-[Oxanium] font-[600] opacity-0 "
-              >
-                Contact Us{" "}
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="none"
-                  >
-                    <circle
-                      cx="6"
-                      cy="6"
-                      r="6"
-                      fill="url(#paint0_linear_65_66)"
-                    />
-                    <defs>
-                      <linearGradient
-                        id="paint0_linear_65_66"
-                        x1="6"
-                        y1="0"
-                        x2="6"
-                        y2="12"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop stop-color="#BB9406" />
-                        <stop offset="1" stop-color="#433500" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </span>
-              </button>
+              <div id="learnMoreBTN">
+                <LearnMoreBTN innerText="Contact Us" path="/contact" />
+              </div>
             </div>
           </div>
 
@@ -1201,7 +1109,7 @@ const MarketingAndBrandingMob = () => {
             initial={{ opacity: 0, x: "-95%" }}
             whileInView={{ opacity: 1, x: "0%" }}
             transition={{ duration: 0.7, ease: "backInOut", delay: 0.4 }}
-            className="AzonixFont font-[Azonix,Oxanium] text-2xl font-[400] text-left"
+            className="AzonixFont font-[Azonix,Oxanium] text-xl font-[400] text-left"
           >
             Branding Services
           </motion.h4>
@@ -1210,7 +1118,7 @@ const MarketingAndBrandingMob = () => {
               onMouseEnter={() => handleHoverAnimation("serviceBox-4")}
               onMouseLeave={() => handleMouseLeave("serviceBox-4")}
               id="serviceBox-4"
-              className="border border-[#000] p-4 overflow-hidden h-80"
+              className="border border-[#000] p-4 overflow-hidden h-64"
             >
               <div
                 id="serviceIconWrapper"
@@ -1223,58 +1131,26 @@ const MarketingAndBrandingMob = () => {
                   alt="app-dev-icon"
                 />
               </div>
-              <h4 className="font-[Oxanium] text-2xl font-[700] text-[#000] my-4">
+              <h4 className="font-[Oxanium] text-lg font-[700] text-[#000] my-4">
                 Logo Design.
               </h4>
               <p
                 id="serviceSmallInfo"
-                className="font-[Oxanium] text-base font-[400] text-[#000]"
+                className="font-[Oxanium] text-sm font-[400] text-[#000]"
               >
                 We craft innovative and distinctive logos that make your
                 business look and feel conspicuous.
               </p>
-              <button
-                id="learnMoreBTN"
-                className="flex justify-center items-center gap-3 cursor-pointer bg-[#000] rounded-full w-[50%] text-[#FFF] py-3 font-[Oxanium] font-[600] opacity-0 "
-              >
-                Contact Us{" "}
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="none"
-                  >
-                    <circle
-                      cx="6"
-                      cy="6"
-                      r="6"
-                      fill="url(#paint0_linear_65_66)"
-                    />
-                    <defs>
-                      <linearGradient
-                        id="paint0_linear_65_66"
-                        x1="6"
-                        y1="0"
-                        x2="6"
-                        y2="12"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop stop-color="#BB9406" />
-                        <stop offset="1" stop-color="#433500" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </span>
-              </button>
+              <div id="learnMoreBTN">
+                <LearnMoreBTN innerText="Contact Us" path="/contact" />
+              </div>
             </div>
 
             <div
               onMouseEnter={() => handleHoverAnimation("serviceBox-5")}
               onMouseLeave={() => handleMouseLeave("serviceBox-5")}
               id="serviceBox-5"
-              className="border border-[#000] p-4 overflow-hidden h-80"
+              className="border border-[#000] p-4 overflow-hidden h-64"
             >
               <div
                 id="serviceIconWrapper"
@@ -1287,58 +1163,26 @@ const MarketingAndBrandingMob = () => {
                   alt="app-dev-icon"
                 />
               </div>
-              <h4 className="font-[Oxanium] text-2xl font-[700] text-[#000] my-4">
+              <h4 className="font-[Oxanium] text-lg font-[700] text-[#000] my-4">
                 Business Branding.
               </h4>
               <p
                 id="serviceSmallInfo"
-                className="font-[Oxanium] text-base font-[400] text-[#000]"
+                className="font-[Oxanium] text-sm font-[400] text-[#000]"
               >
                 We craft successful brands that resonate, shape and define your
                 identity making your business remarkably unique.
               </p>
-              <button
-                id="learnMoreBTN"
-                className="flex justify-center items-center gap-3 cursor-pointer bg-[#000] rounded-full w-[50%] text-[#FFF] py-3 font-[Oxanium] font-[600] opacity-0 "
-              >
-                Contact Us{" "}
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="none"
-                  >
-                    <circle
-                      cx="6"
-                      cy="6"
-                      r="6"
-                      fill="url(#paint0_linear_65_66)"
-                    />
-                    <defs>
-                      <linearGradient
-                        id="paint0_linear_65_66"
-                        x1="6"
-                        y1="0"
-                        x2="6"
-                        y2="12"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop stop-color="#BB9406" />
-                        <stop offset="1" stop-color="#433500" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </span>
-              </button>
+              <div id="learnMoreBTN">
+                <LearnMoreBTN innerText="Contact Us" path="/contact" />
+              </div>
             </div>
 
             <div
               onMouseEnter={() => handleHoverAnimation("serviceBox-6")}
               onMouseLeave={() => handleMouseLeave("serviceBox-6")}
               id="serviceBox-6"
-              className="border border-[#000] p-4 overflow-hidden h-80"
+              className="border border-[#000] p-4 overflow-hidden h-64"
             >
               <div
                 id="serviceIconWrapper"
@@ -1351,52 +1195,20 @@ const MarketingAndBrandingMob = () => {
                   alt="app-dev-icon"
                 />
               </div>
-              <h4 className="font-[Oxanium] text-2xl font-[700] text-[#000] my-4">
+              <h4 className="font-[Oxanium] text-lg font-[700] text-[#000] my-4">
                 Brand Ambassador.
               </h4>
               <p
                 id="serviceSmallInfo"
-                className="font-[Oxanium] text-base font-[400] text-[#000]"
+                className="font-[Oxanium] text-sm font-[400] text-[#000]"
               >
                 Let’s cheerlead, champion and advocate for your brand as your
                 ambassadors to influence and ignite enthusiasm to anyone who
                 cares to listen.
               </p>
-              <button
-                id="learnMoreBTN"
-                className="flex justify-center items-center gap-3 cursor-pointer bg-[#000] rounded-full w-[50%] text-[#FFF] py-3 font-[Oxanium] font-[600] opacity-0 "
-              >
-                Contact Us{" "}
-                <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="none"
-                  >
-                    <circle
-                      cx="6"
-                      cy="6"
-                      r="6"
-                      fill="url(#paint0_linear_65_66)"
-                    />
-                    <defs>
-                      <linearGradient
-                        id="paint0_linear_65_66"
-                        x1="6"
-                        y1="0"
-                        x2="6"
-                        y2="12"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop stop-color="#BB9406" />
-                        <stop offset="1" stop-color="#433500" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </span>
-              </button>
+              <div id="learnMoreBTN">
+                <LearnMoreBTN innerText="Contact Us" path="/contact" />
+              </div>
             </div>
           </div>
         </div>

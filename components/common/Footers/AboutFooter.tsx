@@ -201,7 +201,7 @@ export const AboutFooter = () => {
               </div>
             </div>
             <div className="w-[30%] bg-[#1D1D1D] text-white h-full flex flex-col justify-center items-center">
-              <h4 className="AzonixFont font-[Azonix,Oxanium] text-[28px] lg:landscape:text-[20px] font-[400] text-center">
+              <h4 className="AzonixFont font-[Azonix,Oxanium] text-[32px] lg:landscape:text-[25px] font-[400] text-center">
                 Have you got a project in mind?
               </h4>
               <motion.button
@@ -295,6 +295,7 @@ export const AboutFooter = () => {
 };
 
 const AboutFooterTab = () => {
+  const router = useRouter()
   // const sectionRef = useRef<HTMLDivElement | null>(null);
   const [scope, animate] = useAnimate();
   const handelAnimation = () => {
@@ -509,6 +510,7 @@ const AboutFooterTab = () => {
                     times: [0.2, 0.6, 1],
                   }}
                   className="text-[#FFF] flex justify-center items-center gap-2 my-[2.5%] font-[Oxanium] font-[400] text-lg w-40 h-40 border border-[#2C2C2C]  rounded-full relative hoverAnimationContactBTNAbout overflow-hidden z-10 transition-colors duration-200 ease-in-out delay-100"
+                  onClick={() => router.push("/contact")}
                 >
                   Contact Us
                   <span>
@@ -568,6 +570,7 @@ const AboutFooterTab = () => {
 };
 
 const AboutFooterMob = () => {
+  const router = useRouter()
   return (
     <>
       <div className="h-screen md:hidden lg:hidden xl:hidden 2xl:hidden">
@@ -760,6 +763,7 @@ const AboutFooterMob = () => {
                       delay: 0.4,
                       times: [0.2, 0.6, 1],
                     }}
+                    onClick={() => router.push("/contact")}
                     className="text-[#FFF] flex justify-center items-center gap-2 my-[2.5%] font-[Oxanium] font-[400] text-sm w-28 h-28 border border-[#2C2C2C]  rounded-full relative hoverAnimationContactBTNAbout overflow-hidden z-10 transition-colors duration-200 ease-in-out delay-100"
                   >
                     Contact Us

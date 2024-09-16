@@ -10,11 +10,13 @@ import ArrowIcon from "../../../assets/images/Arrow.png";
 // import FooterLogo from "../../../assets/images/LogoWhite.png";
 import FooterLogo from "../../../assets/images/WhtLogoHor1.svg";
 import Link from "next/link";
+import { useRouter } from "next/router";
 // import { useInView } from "@/hooks/useInView";
 
 export const HomeFooter = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);
   const textRef = useRef<HTMLDivElement | null>(null);
+  const router = useRouter();
 
   const [scope, animate] = useAnimate();
 
@@ -238,25 +240,25 @@ export const HomeFooter = () => {
                     id="rotatingDiv"
                     className="absolute top-0 right-0 bg-[f161fe] w-[100%] h-[100%] transition-all duration-500 ease-linear"
                   />
-                  <button
+                  <button onClick={()=>router.push('/contact')}
                     id="BTNAnimate"
                     className="font-[Open Sans] flex flex-col justify-center items-center bg-[#121212] opacity-100 text-[#FFF] w-[185px] h-[185px] lg:h-[165px] lg:w-[165px] 2xl:w-[185px] 2xl:h-[185px] xl:w-[185px] xl:h-[185px] rounded-full font-[800] overflow-hidden relative z-10"
                   >
                     <span
                       id="innerText"
-                      className=" 2xl:text-4xl xl:text-3xl lg:text-2xl  mt-7"
+                      className=" 2xl:text-4xl xl:text-4xl lg:text-2xl  mt-7"
                     >
                       Project
                     </span>
                     <span
                       id="innerText-2"
-                      className="2xl:text-4xl xl:text-3xl lg:text-2xl translate-y-28"
+                      className="2xl:text-4xl xl:text-4xl lg:text-2xl translate-y-28"
                     >
                       Idea
                     </span>
                     <span
                       id="innerText-3"
-                      className="2xl:text-4xl xl:text-3xl lg:text-2xl translate-y-28 hidden  flex-col justify-center items-center gap-3.5"
+                      className="2xl:text-4xl xl:text-4xl lg:text-2xl translate-y-28 hidden  flex-col justify-center items-center gap-3.5"
                     >
                       Get Started{" "}
                       <span
@@ -325,6 +327,7 @@ export const HomeFooter = () => {
 // #Footer Tablet
 const HomeFooterTab = () => {
   const textRef = useRef<HTMLDivElement | null>(null);
+  const router = useRouter()
 
   const [scope, animate] = useAnimate();
 
@@ -524,7 +527,7 @@ const HomeFooterTab = () => {
                     onMouseLeave={handleAnimationOut}
                     className="flex justify-center items-center bg-[#E413F6] h-[200px] w-[200px]  2xl:w-[275px]  2xl:h-[275px] rounded-full homeFooterBTNShadow "
                   >
-                    <button
+                    <button onClick={()=>router.push('/contact')}
                       id="BTNAnimate"
                       className="font-[Open Sans] flex flex-col justify-center items-center text-3xl 2xl:text-5xl bg-[#000000]/95 text-[#FFF] w-[185px] h-[185px] 2xl:w-[255px] 2xl:h-[255px] rounded-full font-[800] overflow-hidden relative z-10"
                     >
@@ -608,6 +611,7 @@ const HomeFooterMob = () => {
   const [scope, animate] = useAnimate();
 
   const isInView = useInView(textRef);
+  const router = useRouter();
 
   const handleInViewAnimation = () => {
     const gsapTimeLine = gsap.timeline();
@@ -735,7 +739,7 @@ const HomeFooterMob = () => {
       xl:hidden lg:hidden md:hidden"
       >
         <div className="w-[90%]">
-          <div className="h-16 w-52 relative mx-auto">
+          <div className="h-16 w-44 relative mx-auto">
             <Image fill src={FooterLogo} alt="logo" />
           </div>
           <p className="font-[Oxanium] font-[400] text-white text-sm text-center my-2">
@@ -804,9 +808,9 @@ const HomeFooterMob = () => {
                 onMouseLeave={handleAnimationOut}
                 className="flex justify-center items-center bg-[#E413F6] h-[160px] w-[160px] rounded-full homeFooterBTNShadow "
               >
-                <button
+                <button onClick={()=>router.push('/contact')} 
                   id="BTNAnimate"
-                  className="font-[Open Sans] flex flex-col justify-center items-center text-3xl 2xl:text-5xl bg-[#000000]/95 text-[#FFF] w-[150px] h-[150px]  rounded-full font-[800] overflow-hidden relative z-10"
+                  className="font-[Open Sans] flex flex-col justify-center items-center text-3xl  bg-[#000000]/95 text-[#FFF] w-[150px] h-[150px]  rounded-full font-[800] overflow-hidden relative z-10"
                 >
                   <span id="innerText" className="text-3xl  mt-7">
                     Project

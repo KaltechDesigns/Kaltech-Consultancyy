@@ -221,7 +221,7 @@ const MobNav = () => {
                     className="border-b border-[#D9D9D9] w-full px-7 py-4 navLinks opacity-100"
                   >
                     <Link
-                      className="font-[Oxanium] font-[400] text-4xl lg:landscape:text-6xl text-[#121212] "
+                      className="font-[Oxanium] font-[400] text-3xl lg:landscape:text-6xl text-[#121212] "
                       href={cur.path}
                     >
                       {cur.title}
@@ -240,19 +240,19 @@ const MobNav = () => {
                 </h4>
                 <Link
                   href="/"
-                  className="text-[#121212] font-[Oxanium] text-base font-[400]"
+                  className="text-[#121212] font-[Oxanium] text-sm font-[400]"
                 >
                   +1(931)-266-6101
                 </Link>
                 <Link
                   href="/"
-                  className="text-[#121212] font-[Oxanium] text-base font-[400]"
+                  className="text-[#121212] font-[Oxanium] text-sm font-[400]"
                 >
                   info@kaltechdesign.com
                 </Link>
                 <Link
                   href="/"
-                  className="text-[#121212] font-[Oxanium] text-base font-[400]"
+                  className="text-[#121212] font-[Oxanium] text-sm font-[400]"
                 >
                   103 Stoneledge Ct, Elizabethtown, KY 42701, Kentucky, USA.
                 </Link>
@@ -262,8 +262,8 @@ const MobNav = () => {
             <div className="absolute bottom-0 left-[25%]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="210"
-                height="134"
+                width="200"
+                height="110"
                 viewBox="0 0 240 174"
                 fill="none"
               >
@@ -374,7 +374,7 @@ const MobNav = () => {
                 </Link>
               </div>
               <div className="rotate-180">
-                <h4 className="changeWrittingMode2 text-3xl font-[Oxanium] font-[700]">
+                <h4 className="changeWrittingMode2 text-2xl font-[Oxanium] font-[700]">
                   Follow Us
                 </h4>
               </div>

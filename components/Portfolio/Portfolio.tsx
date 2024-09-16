@@ -182,7 +182,7 @@ export const Portfolio = () => {
                     <h3 className="text-[#121212] font-[Oxanium] text-xl 2xl:text-3xl font-[700]">
                       {dummyData[currentIndex - 1].heading}
                     </h3>
-                    <p className="text-[#2E2E2E] font-[Oxanium] text-base 2xl:text-[20px] my-4 font-[400]">
+                    <p className="text-[#2E2E2E] font-[Oxanium] lg:text-sm xl:text-sm 2xl:text-[20px] my-4 font-[400]">
                       {dummyData[currentIndex - 1].description}
                     </p>
 
@@ -209,7 +209,7 @@ export const Portfolio = () => {
                       />
                     </div>
                   </div>
-                  <div id="imageWrapper" className="w-[50%] h-[90%] relative">
+                  <div id="imageWrapper" className="w-[50%] 2xl:h-[90%] xl:h-[80%] h-[75%] relative">
                     <Image
                       fill
                       src={dummyData[currentIndex - 1].img}
@@ -234,13 +234,13 @@ export const Portfolio = () => {
                           }
                           className=" min-w-[15%]  flex flex-col justify-between items-start gap-2 cursor-pointer"
                         >
-                          <div className="flex justify-center items-center gap-5 px-2">
-                            <h3 className="font-[Kanit] font-[600] text-[20px]">
+                          <div className="flex justify-center items-center gap-2.5 2xl:gap-5 px-2">
+                            <h3 className="font-[Kanit] font-[600] text-base 2xl:text-[20px]">
                               {cur.SRNO}
                             </h3>
                             <h3
                               id="nav_title"
-                              className={`font-[Kanit] text-base 2xl:text-[20px] font-[300] ${
+                              className={`font-[Kanit] text-sm 2xl:text-[20px] font-[300] ${
                                 currentIndex === id + 1
                                   ? "opacity-100"
                                   : "opacity-0"
@@ -439,44 +439,10 @@ const PortfolioTab = () => {
                     </div>
                   ))}
                 </div> */}
-                <button
-                  id="content"
-                  onClick={() =>
-                    router.push(`/${dummyData[currentIndex - 1].link}`)
-                  }
-                  className="flex justify-center items-center gap-3 cursor-pointer bg-[#000] rounded-full w-full text-[#FFF] py-4 font-[Oxanium] font-[600] mt-3  learMoreBTNcustomHoverEffect capitalize text-xl"
-                >
-                  Learn more{" "}
-                  {/* <span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="none"
-                  >
-                    <circle0
-                      cx="6"
-                      cy="6"
-                      r="6"
-                      fill="url(#paint0_linear_65_66)"
-                    />
-                    <defs>
-                      <linearGradient
-                        id="paint0_linear_65_66"
-                        x1="6"
-                        y1="0"
-                        x2="6"
-                        y2="12"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop stop-color="#BB9406" />
-                        <stop offset="1" stop-color="#433500" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </span> */}
-                </button>
+               
+                <div id="content">
+                <LearnMoreBTN innerText='Learn More' path='/' />
+                </div>
               </div>
               <div className="h-[52%] w-full flex justify-between items-start gap-4">
                 <div id="Navbar" className="w-[15%] flex flex-col gap-3">
