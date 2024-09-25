@@ -114,7 +114,7 @@ export const Testimonial = () => {
                   <h3 className="font-[Oxanium] lg:text-3xl xl:text-3xl 2xl:text-4xl font-[700]">
                     What our clients say about us?
                   </h3>
-                  <p className="font-[Oxanium] lg:text-sm xl:text-sm 2xl:text-[17px] xl:font-[200] lg:font-[200] 2xl:font-[400]">
+                  <p className="font-[Oxanium] lg:text-sm xl:text-base 2xl:text-[17px] xl:font-[200] lg:font-[200] 2xl:font-[400]">
                     Our customer testimonials are more than just kind
                     words—they’re a testament to our commitment to excellence.
                     When our clients share their experiences, they provide
@@ -184,7 +184,7 @@ export const Testimonial = () => {
                   <div
                     key={id}
                     style={{ transform: `translateX(-${currentIndex * 105}%)` }}
-                    className={`testimonialCardBC  min-w-[35%] py-5 px-6 flex justify-start items-center flex-col gap-5 transition-transform duration-200 ease-in-out h-96`}
+                    className={`testimonialCardBC h-[90%] min-w-[35%] py-5 px-6 flex justify-start items-center flex-col gap-5 transition-transform duration-200 ease-in-out`}
                   >
                     <div className="px-2 py-2 flex justify-start items-center gap-3 w-full  mx-auto borderGradient">
                       <div className="2xl:h-14 2xl:w-14 xl:h-12 xl:w-12 lg:h-10 lg:w-10 relative flex-shrink-0 rounded-full overflow-hidden">
@@ -204,7 +204,7 @@ export const Testimonial = () => {
                         </p>
                       </div>
                     </div>
-                    <p className="font-[Oxanium] 2xl:font-[300] xl:font-[200] lg:font-[200] lg:text-sm xl:text-sm 2xl:text-base 2xl:line-clamp-[10] xl:line-clamp-[12] lg:line-clamp-[8]">
+                    <p className="font-[Oxanium] 2xl:font-[300] xl:font-[200] lg:font-[200] lg:text-sm xl:text-base 2xl:text-base 2xl:line-clamp-[10] xl:line-clamp-[10] lg:line-clamp-[8]">
                       {cur.description}
                     </p>
                   </div>
@@ -403,7 +403,7 @@ const TestimonialMob = () => {
             <div className="flex justify-between items-center w-full gap-5 py-2 ">
               <div className="h-[2px] bg-[#D9D9D9] flex-1" />
               <div>
-                <h3 className="text-[#121212] text-3xl flex-shrink-0 font-[400] uppercase AzonixFont font-[Azonix,Oxanium]">
+                <h3 className="text-[#121212] text-4xl flex-shrink-0 font-[400] uppercase AzonixFont font-[Azonix,Oxanium]">
                   Testimonials
                 </h3>
               </div>
@@ -427,7 +427,7 @@ const TestimonialMob = () => {
                   </svg>
                 </div>
                 <div className="flex justify-start items-start gap-2 flex-col z-10">
-                  <h4 className="font-[Oxanium] font-[700] text-2xl text-[#000000]">
+                  <h4 className="font-[Oxanium] font-[700] text-3xl text-[#000000]">
                     What our clients say about us?
                   </h4>
                   <p className="font-[Oxanium] font-[400] text-sm text-[#2E2E2E]">

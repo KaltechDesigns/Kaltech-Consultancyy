@@ -50,7 +50,7 @@ export const Navbar = () => {
                 { title: "About Us", path: "/about" },
                 { title: "Services", path: "/service" },
                 { title: "Blog", path: "/blog" },
-                { title: "Contact us", path: "/contact" },
+                { title: "Contact us", path: "/contactus" },
               ].map((cur, id) => (
                 <motion.div
                   initial={{ scale: 1, y: "0%" }}

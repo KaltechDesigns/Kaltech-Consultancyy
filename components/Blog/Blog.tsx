@@ -5,8 +5,6 @@ import { useRouter } from "next/router";
 import { blogData } from "@/blogData";
 
 import BlogBg from "../../assets/images/BlogBg.png";
-import BlogBg2 from "../../assets/images/BlogBg2.png";
-import BlogImg1 from "../../assets/images/BlogBg.png";
 
 import { motion, useAnimate } from "framer-motion";
 
@@ -14,55 +12,8 @@ export const Blog = () => {
   const [scope, animate] = useAnimate();
   const router = useRouter();
 
-  const handleHoverAnimate = async (btnID: any) => {
-    await animate(
-      `#${btnID} #arrow`,
-      {
-        opacity: 1,
-      },
-      {
-        duration: 0.8,
-        ease: "circInOut",
-        delay: 0.1,
-      }
-    );
-    animate(
-      `#${btnID} #arrow`,
-      {
-        rotate: ["-90deg", "0deg"],
-      },
-      {
-        duration: 0.8,
-        ease: "circInOut",
-        delay: 0.1,
-      }
-    );
-  };
-  const handleLeaveAnimate = async (btnID: any) => {
-    await animate(
-      `#${btnID} #arrow`,
-      {
-        rotate: ["0deg", "-90deg"],
-      },
-      {
-        duration: 0.8,
-        ease: "circInOut",
-        delay: 0.1,
-      }
-    );
-
-    animate(
-      `#${btnID} #arrow`,
-      {
-        opacity: 0,
-      },
-      {
-        duration: 0.8,
-        ease: "circInOut",
-        delay: 0.1,
-      }
-    );
-  };
+  const handleHoverAnimate = async (btnID: any) => {};
+  const handleLeaveAnimate = async (btnID: any) => {};
 
   return (
     <>
@@ -393,7 +344,7 @@ const BlogTab = () => {
                         </svg>
                       </div>
                       <h4 className="font-[Kanit] text-md font-[300]">
-                      {cur.createdDate}
+                        {cur.createdDate}
                       </h4>
                     </div>
                     <h3 className="font-[Oxanium] text-lg 2xl:text-2xl font-[700] my-5">
@@ -404,7 +355,9 @@ const BlogTab = () => {
                     </p>
 
                     <button
-                      onClick={() => router.push(`blog/${cur.id}?bn=${cur.mainTitle}`)}
+                      onClick={() =>
+                        router.push(`blog/${cur.id}?bn=${cur.mainTitle}`)
+                      }
                       className="font-[Kanit] text-md font-[300] underline"
                     >
                       Read More
@@ -439,7 +392,6 @@ const BlogMob = () => {
               <div className="relative h-[50%] w-full">
                 <Image
                   src={`/${blogData[0].featureImg}`}
-
                   fill
                   alt="blogImg"
                   className="object-cover"
@@ -450,7 +402,7 @@ const BlogMob = () => {
                   {blogData[0].mainTitle}
                 </h4>
                 <p className="text-[13px] font-[400] font-[Oxanium] my-1 line-clamp-4">
-                {blogData[0].mainInfo}
+                  {blogData[0].mainInfo}
                 </p>
                 <div className="border-t-2 border-[#D9D9D9] flex justify-between items-center py-3 px-0 mt-1">
                   <div className="flex justify-start items-center gap-1">
@@ -484,13 +436,15 @@ const BlogMob = () => {
                       </svg>
                     </div>
                     <h4 className="font-[Kanit] text-[12px] font-[300]">
-                    {blogData[0].createdDate}
+                      {blogData[0].createdDate}
                     </h4>
                   </div>
                   <button
-                    onClick={() =>       router.push(
-                      `blog/${blogData[0].id}?bn=${blogData[0].mainTitle}`
-                    )}
+                    onClick={() =>
+                      router.push(
+                        `blog/${blogData[0].id}?bn=${blogData[0].mainTitle}`
+                      )
+                    }
                     className="font-[Kanit] text-[14px] font-[300] underline"
                   >
                     Read More
@@ -545,12 +499,16 @@ const BlogMob = () => {
                     </h4>
                   </div>
                   <h3 className="font-[Oxanium] text-sm font-[700] my-2">
-                   {cur.mainTitle}
+                    {cur.mainTitle}
                   </h3>
-                  <p className="line-clamp-1 font-[Oxanium] text-[12px] font-[400]">{cur.mainInfo}</p>
+                  <p className="line-clamp-1 font-[Oxanium] text-[12px] font-[400]">
+                    {cur.mainInfo}
+                  </p>
 
                   <button
-                    onClick={() => router.push(`blog/${cur.id}?bn=${cur.mainTitle}`)}
+                    onClick={() =>
+                      router.push(`blog/${cur.id}?bn=${cur.mainTitle}`)
+                    }
                     className="font-[Kanit] text-sm font-[300] underline"
                   >
                     Read More

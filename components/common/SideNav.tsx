@@ -111,14 +111,17 @@ Let's break down the functionality of the code: */
             />
           </svg>
         </button>
-        <div className="flex justify-end items-end gap-0 transformRotate">
+        <Link
+          href="tel:+1(931)- 266-6101"
+          className="flex justify-end items-end gap-0 transformRotate"
+        >
           <h3 className="font-[Oxanium] changeWrittingMode text-right text-[#121212] font-[600] 2xl:text-[17px] lg:text-sm xl:text-base">
             +1(931)- 266-6101
           </h3>
           <p className="font-[Oxanium] changeWrittingMode text-right text-[#555] font-[300] text-[12px] 2xl:text-[14px]">
             For all enquiries call
           </p>
-        </div>
+        </Link>
       </div>
       {/* animated side nav for desktop */}
       <div
@@ -159,6 +162,7 @@ Let's break down the functionality of the code: */
                 >
                   Instagram
                 </Link>
+
                 <Link
                   className="font-[Oxanium] 2xl:text-lg xl:text-base lg:text-base font-[500] text-[#121212]"
                   href="https://x.com/KaltechServices"
@@ -177,6 +181,24 @@ Let's break down the functionality of the code: */
                     />
                   </svg>
                 </Link>
+                <Link
+                  className="font-[Oxanium] 2xl:text-lg xl:text-base lg:text-base font-[500] text-[#121212]"
+                  href="https://www.linkedin.com/company/kaltech-designs/"
+                  target="_blank"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.8879 0.540039H2.81371C2.21329 0.540039 1.63745 0.778557 1.21289 1.20312C0.788323 1.62769 0.549805 2.20352 0.549805 2.80395L0.549805 14.8781C0.549805 15.4786 0.788323 16.0544 1.21289 16.479C1.63745 16.9035 2.21329 17.142 2.81371 17.142H14.8879C15.4883 17.142 16.0642 16.9035 16.4887 16.479C16.9133 16.0544 17.1518 15.4786 17.1518 14.8781V2.80395C17.1518 2.20352 16.9133 1.62769 16.4887 1.20312C16.0642 0.778557 15.4883 0.540039 14.8879 0.540039V0.540039ZM6.20958 13.6783C6.2097 13.7243 6.20074 13.7699 6.18321 13.8125C6.16568 13.855 6.13992 13.8937 6.10741 13.9263C6.0749 13.9589 6.03628 13.9848 5.99376 14.0024C5.95124 14.0201 5.90565 14.0292 5.85962 14.0292H4.36827C4.32215 14.0293 4.27646 14.0203 4.23383 14.0027C4.1912 13.9851 4.15247 13.9593 4.11986 13.9267C4.08725 13.8941 4.06141 13.8553 4.04382 13.8127C4.02623 13.7701 4.01724 13.7244 4.01736 13.6783V7.4261C4.01736 7.33303 4.05433 7.24378 4.12014 7.17797C4.18595 7.11216 4.2752 7.07519 4.36827 7.07519H5.85962C5.95252 7.07544 6.04153 7.11252 6.10713 7.1783C6.17274 7.24408 6.20958 7.3332 6.20958 7.4261V13.6783ZM5.11347 6.4828C4.83362 6.4828 4.56006 6.39982 4.32737 6.24434C4.09468 6.08887 3.91333 5.86788 3.80623 5.60933C3.69914 5.35079 3.67112 5.06629 3.72571 4.79182C3.78031 4.51734 3.91507 4.26523 4.11295 4.06734C4.31084 3.86946 4.56296 3.7347 4.83743 3.6801C5.1119 3.62551 5.3964 3.65353 5.65494 3.76062C5.91349 3.86771 6.13448 4.04907 6.28995 4.28176C6.44543 4.51444 6.52841 4.78801 6.52841 5.06786C6.52841 5.44312 6.37934 5.80302 6.11399 6.06837C5.84863 6.33373 5.48874 6.4828 5.11347 6.4828ZM14.005 13.7028C14.0051 13.7452 13.9968 13.7872 13.9807 13.8264C13.9645 13.8656 13.9407 13.9012 13.9108 13.9312C13.8808 13.9612 13.8452 13.9849 13.806 14.0011C13.7668 14.0173 13.7248 14.0255 13.6824 14.0254H12.0788C12.0364 14.0255 11.9944 14.0173 11.9552 14.0011C11.916 13.9849 11.8804 13.9612 11.8504 13.9312C11.8204 13.9012 11.7966 13.8656 11.7805 13.8264C11.7643 13.7872 11.756 13.7452 11.7562 13.7028V10.7739C11.7562 10.3362 11.8844 8.85708 10.6119 8.85708C9.6262 8.85708 9.42527 9.86923 9.38566 10.3239V13.7066C9.38566 13.7913 9.35232 13.8727 9.29284 13.933C9.23336 13.9934 9.15251 14.0279 9.06777 14.0292H7.51887C7.47655 14.0292 7.43465 14.0208 7.39556 14.0046C7.35647 13.9884 7.32097 13.9646 7.29109 13.9346C7.26121 13.9047 7.23753 13.8691 7.22142 13.8299C7.20531 13.7908 7.19709 13.7489 7.19721 13.7066V7.39874C7.19709 7.35642 7.20531 7.31449 7.22142 7.27536C7.23753 7.23622 7.26121 7.20065 7.29109 7.17068C7.32097 7.14071 7.35647 7.11693 7.39556 7.10071C7.43465 7.08449 7.47655 7.07614 7.51887 7.07614H9.06777C9.15333 7.07614 9.23538 7.11012 9.29588 7.17062C9.35638 7.23113 9.39037 7.31318 9.39037 7.39874V7.94397C9.75637 7.39403 10.2988 6.97143 11.4562 6.97143C14.0201 6.97143 14.0031 9.36551 14.0031 10.6805L14.005 13.7028Z"
+                      fill="#000"
+                    />
+                  </svg>
+                </Link>
               </div>
             </div>
 
@@ -184,13 +206,13 @@ Let's break down the functionality of the code: */
               <div className="flex flex-col justify-center items-start">
                 <Link
                   className="font-[Oxanium] 2xl:text-lg xl:text-base lg:text-[12px] font-[400] text-[#121212]"
-                  href="/"
+                  href="/privacypolicy"
                 >
                   Terms of Services
                 </Link>
                 <Link
                   className="font-[Oxanium] 2xl:text-lg xl:text-base lg:text-[12px] font-[400] text-[#121212]"
-                  href="/"
+                  href="/privacypolicy"
                 >
                   Privacy Policy
                 </Link>
@@ -205,7 +227,7 @@ Let's break down the functionality of the code: */
                   { path: "/about", title: "About Us" },
                   { path: "/service", title: "Services" },
                   { path: "/blog", title: "Blog" },
-                  { path: "/contact", title: "Contact" },
+                  { path: "/contactus", title: "Contact" },
                 ].map((cur, id) => (
                   <div
                     key={id}
@@ -270,7 +292,7 @@ Let's break down the functionality of the code: */
               href="/"
               className="text-[#121212] font-[Oxanium] 2xl:text-lg xl:text-base lg:text-[12px] font-[400]"
             >
-              103 Stoneledge Ct, Elizabethtown, KY 42701, Kentucky, USA.
+              185 N Wilson Rd, KY 40160, Radcliff Kentucky.
             </Link>
           </div>
 

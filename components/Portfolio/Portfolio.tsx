@@ -19,7 +19,7 @@ const dummyData = [
     description: `Bliz services is an international organization with headquarters in Canada that specializes in facilitating  immigration, work permits, both long and short stay visas, and higher education to the UK, US, and Canada. Kaltech was contracted to design and build a custom onboarding pipeline to automate and ease the application processes from document submission, authentication,  processing and official documents being granted. `,
     img: portfolioImg1,
     features: ["Lorem ipsum", "Lorem ipsum", "Lorem ipsum", "Lorem ipsum"],
-    link: "/",
+    link: "https://blizservices.com/",
     bgColor: "#E6DFFF",
   },
   {
@@ -28,7 +28,7 @@ const dummyData = [
     description: `Elta Healthcare is a medical and non-medical provider, offering assistance and support to enable its clients to maintain active and independent lives. Elta Healthcare provides services to seniors, disabled members, and people of all ages: (physical conditions and cognitive abilities) who would like to enjoy the comfort and safety of their homes while receiving assistance with care. Elta contracted Kaltech to build a fullstack application which will help to increase their brand identity by designing and developing a clean and easy to navigate website, and to design a compelling and attracting marketing campaign to show case  their services`,
     img: portfolioImg2,
     features: ["Lorem ipsum", "Lorem ipsum", "Lorem ipsum", "Lorem ipsum"],
-    link: "/",
+    link: "https://eltahealthcare.com",
     bgColor: "#FDD",
   },
   {
@@ -37,7 +37,7 @@ const dummyData = [
     description: `Insurance Life Magazine is a lifestyle magazine for insurance agents, other financial professionals and people looking for cash liquidity, leverage and control. Kaltech was contracted to design an eye catching magazine platform which will help grow it’s subscriber base.`,
     img: portfolioImg3,
     features: ["Lorem ipsum", "Lorem ipsum", "Lorem ipsum", "Lorem ipsum"],
-    link: "/",
+    link: "https://insurancelifemagazine.com/",
     bgColor: "#E8FFEA",
   },
   {
@@ -46,7 +46,7 @@ const dummyData = [
     description: `JOptiman agency is a group of financial professionals and partners who help each other reach a common mission, vision and objectives. Kaltech was contracted to build their agency store front. The project was split into two phases. Building the store front where suitable applicants can join the agency to enjoy all the benefits, and interested parties who need both financial and insurance services. The second phase involves the design and building of a full custom CRM to assist all the agents perform all their business trnsactions.`,
     img: portfolioImg4,
     features: ["Lorem ipsum", "Lorem ipsum", "Lorem ipsum", "Lorem ipsum"],
-    link: "/",
+    link: "https://joptimanconsultancy.com/",
     bgColor: "#FFF0E8",
   },
   {
@@ -55,7 +55,7 @@ const dummyData = [
     description: ` The Tennessee Association of Blood Banks, TABB was established in 1971 as a not-for-profit organization of blood bank and transfusion medicine professionals and other individuals working in this field. They contracted Kaltech to build a simple platform where they could hold their meetings and annual conferences.`,
     img: portfolioImg5,
     features: ["Lorem ipsum", "Lorem ipsum", "Lorem ipsum", "Lorem ipsum"],
-    link: "/",
+    link: "https://tabbonline.org/",
     bgColor: "#ECF4FF",
   },
   {
@@ -64,7 +64,7 @@ const dummyData = [
     description: `UpWealth magazine is a premier magazine for entrepreneurs by entrepreneurs from small to large business owners who have mastered the art of creating and maintaining business systems. They contracted Kaltech to design and build an interactive and dynamic platform that can showcase the power and interest of business tycoons.`,
     img: portfolioImg6,
     features: ["Lorem ipsum", "Lorem ipsum", "Lorem ipsum", "Lorem ipsum"],
-    link: "/",
+    link: "https://upwealthmagazine.com/",
     bgColor: "#FFFFFF",
   },
 ];
@@ -182,25 +182,9 @@ export const Portfolio = () => {
                     <h3 className="text-[#121212] font-[Oxanium] text-xl 2xl:text-3xl font-[700]">
                       {dummyData[currentIndex - 1].heading}
                     </h3>
-                    <p className="text-[#2E2E2E] font-[Oxanium] lg:text-sm xl:text-sm 2xl:text-[20px] my-4 font-[400]">
+                    <p className="text-[#2E2E2E] font-[Oxanium] text-base 2xl:text-[18px] my-4 font-[400] customLine__height">
                       {dummyData[currentIndex - 1].description}
                     </p>
-
-                    {/* <div className="grid grid-cols-2 w-[80%] 2xl:w-[60%] gap-6">
-                      {dummyData[currentIndex - 1].features.map((cur, id) => (
-                        <div
-                          key={id}
-                          className="flex justify-center itemd-center py-2 gap-2 border border-[#000] rounded-full"
-                        >
-                          <span className="font-[Kanit] text-[#2E2E2E] text-base 2xl:text-[20px] font-[500]">
-                            +
-                          </span>
-                          <h4 className="font-[Kanit] text-[#2E2E2E] text-base 2xl:text-[20px] font-[300]">
-                            {cur}
-                          </h4>
-                        </div>
-                      ))}
-                    </div> */}
 
                     <div className="my-7">
                       <LearnMoreBTN
@@ -209,7 +193,7 @@ export const Portfolio = () => {
                       />
                     </div>
                   </div>
-                  <div id="imageWrapper" className="w-[50%] 2xl:h-[90%] xl:h-[80%] h-[75%] relative">
+                  <div id="imageWrapper" className="w-[50%] h-[90%] relative">
                     <Image
                       fill
                       src={dummyData[currentIndex - 1].img}
@@ -234,17 +218,16 @@ export const Portfolio = () => {
                           }
                           className=" min-w-[15%]  flex flex-col justify-between items-start gap-2 cursor-pointer"
                         >
-                          <div className="flex justify-center items-center gap-2.5 2xl:gap-5 px-2">
-                            <h3 className="font-[Kanit] font-[600] text-base 2xl:text-[20px]">
+                          <div className="flex justify-center items-center gap-5 px-2">
+                            <h3 className="font-[Kanit] font-[600] text-[18px]">
                               {cur.SRNO}
                             </h3>
+
                             <h3
                               id="nav_title"
-                              className={`font-[Kanit] text-sm 2xl:text-[20px] font-[300] ${
-                                currentIndex === id + 1
-                                  ? "opacity-100"
-                                  : "opacity-0"
-                              }  transition-all duration-300 ease-in-out`}
+                              className={`font-[Kanit] text-base 2xl:text-[17px] font-[300]
+                             
+                               transition-all duration-300 ease-in-out`}
                             >
                               {cur.heading}
                             </h3>
@@ -413,35 +396,8 @@ const PortfolioTab = () => {
                 >
                   {dummyData[currentIndex - 1].description}
                 </p>
-                {/* <div id="content" className="grid grid-cols-2 gap-4 w-[60%]">
-                  {dummyData[currentIndex - 1].features.map((cur, id) => (
-                    <div
-                      key={id}
-                      className="flex justify-center items-center gap-3 border-2 border-[#000000] rounded-full py-2"
-                    >
-                      <span className="text-base font-[300] font-[Kanit]">
-                        <svg
-                          width="7"
-                          height="7"
-                          viewBox="0 0 7 7"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M3.28 6.592V4.224H0.8V3.184H3.28V0.72H4.352V3.184H6.832V4.224H4.352V6.592H3.28Z"
-                            fill="black"
-                          />
-                        </svg>
-                      </span>
-                      <p className="text-base font-[300] font-[Kanit] text-[#2E2E2E]">
-                        {cur}
-                      </p>
-                    </div>
-                  ))}
-                </div> */}
-               
-                <div id="content">
-                <LearnMoreBTN innerText='Learn More' path='/' />
+                <div className="w-[60%]">
+                  <LearnMoreBTN innerText="Learn More" path="/" />
                 </div>
               </div>
               <div className="h-[52%] w-full flex justify-between items-start gap-4">
@@ -628,45 +584,8 @@ const PortfolioMob = () => {
                 >
                   {dummyData[currentIndex - 1].description}
                 </p>
-                {/* <div id="content" className="grid grid-cols-2 gap-2 w-full">
-                  {dummyData[currentIndex - 1].features.map((cur, id) => (
-                    <>
-                      <div
-                        key={id}
-                        className="flex justify-center items-center gap-3 border-2 border-[#000000] rounded-full py-1"
-                      >
-                        <span className="text-base font-[300] font-[Kanit]">
-                          <svg
-                            width="7"
-                            height="7"
-                            viewBox="0 0 7 7"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path
-                              d="M3.28 6.592V4.224H0.8V3.184H3.28V0.72H4.352V3.184H6.832V4.224H4.352V6.592H3.28Z"
-                              fill="black"
-                            />
-                          </svg>
-                        </span>
-                        <p className="text-base font-[300] font-[Kanit] text-[#2E2E2E]">
-                          {cur}
-                        </p>
-                      </div>
-                    </>
-                  ))}
-                </div> */}
 
-                {/* <button
-                  id="content"
-                  onClick={() =>
-                    router.push(`/${dummyData[currentIndex - 1].link}`)
-                  }
-                  className="flex justify-center items-center gap-3 cursor-pointer bg-[#000] rounded-full w-full text-[#FFF] py-1.5 font-[Oxanium] font-[600] mt-1  learMoreBTNcustomHoverEffect capitalize text-base"
-                >
-                  Learn more{" "}
-                </button> */}
-                <LearnMoreBTN innerText='Learn More' path='/' />
+                <LearnMoreBTN innerText="Learn More" path="/" />
 
                 <div id="Navbar" className="w-full flex my-2">
                   {dummyData.map((cur, id) => (

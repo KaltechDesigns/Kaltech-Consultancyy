@@ -76,7 +76,7 @@ const WhyChooseUsThirdPart = () => {
                   delay: 0.4,
                   times: [0.2, 0.6, 1],
                 }}
-                onClick={() => router.push("/contact")}
+                onClick={() => router.push("/contactus")}
                 className="text-[#2C2C2C] flex justify-center items-center gap-5 mt-[2.5%] font-[Oxanium] font-[400] text-base 2xl:text-lg w-36 h-36 2xl:w-40 2xl:h-40 border border-[#2C2C2C]  rounded-full relative hoverAnimationContactBTN overflow-hidden z-10 transition-colors duration-200 ease-in-out delay-100"
               >
                 Contact Us
@@ -235,7 +235,7 @@ const WhyChooseUsSecondPart = ({
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, ease: "circInOut", delay: 0.3 }}
           >
-            <LearnMoreBTN innerText="Learn More" path="/" />
+            <LearnMoreBTN innerText="Learn More" path="/service" />
           </motion.div>
 
           <motion.div
@@ -891,7 +891,11 @@ export const WhyChooseUs = () => {
                       />
                     </svg>
                   </motion.div>
-                  <LearnMoreBTN innerText='Learn More' path='/' />
+
+                  
+            
+
+                  <LearnMoreBTN innerText='Learn More' path='/'  />
 
                   <motion.div
                     initial={{ opacity: 0 }}
@@ -905,7 +909,7 @@ export const WhyChooseUs = () => {
                     className=" w-[90%] flex justify-center items-center gap-4"
                   >
                     <Link
-                      target="_blank" className='w-[30%]'
+                      target="_blank" className="w-[30%]"
                       href="https://www.facebook.com/profile.php?id=100089610044002
 "
                     >
@@ -917,14 +921,14 @@ export const WhyChooseUs = () => {
                           ease: "circInOut",
                           delay: 0.5,
                         }}
-                        className="font-[Kanit] font-[500] text-[#121212] text-center uppercase text-[14px] border-[1.2px] border-[#121212] rounded-full py-1 w-full flex justify-center items-center hoverAnimationContactBTN relative"
+                        className="font-[Kanit] font-[500] text-[#121212] text-center uppercase text-[14px] border-[1.2px] border-[#121212] rounded-full py-1 w-full  flex justify-center items-center hoverAnimationContactBTN relative"
                       >
                         FaceBook
                       </motion.button>
                     </Link>
 
-                    <Link className='w-[30%]' target="_blank" href="https://x.com/KaltechServices">
-                      <motion.span
+                    <Link target="_blank" href="https://x.com/KaltechServices" className="w-[30%]">
+                      <motion.button
                         initial={{ y: "60%" }}
                         whileInView={{ y: "0%" }}
                         transition={{
@@ -932,17 +936,17 @@ export const WhyChooseUs = () => {
                           ease: "circInOut",
                           delay: 0.6,
                         }}
-                        className="font-[Kanit]  text-[#121212] text-center uppercase flex justify-center items-center  border-[1.2px] border-[#121212] rounded-full py-1.5 w-full hoverAnimationContactBTN relative"
+                        className="font-[Kanit]  text-[#121212] text-center uppercase flex justify-center items-center  border-[1.2px] border-[#121212] rounded-full py-1.5 w-full  hoverAnimationContactBTN relative"
                       >
                         <XIcon className="text-[17px] font-[800]" />
-                      </motion.span>
+                      </motion.button>
                     </Link>
 
-                    <Link className='w-[30%]'
+                    <Link
                       target="_blank"
-                      href="https://www.instagram.com/kaltechconsultancy/"
+                      href="https://www.instagram.com/kaltechconsultancy/" className="w-[30%]"
                     >
-                      <motion.span
+                      <motion.button
                         initial={{ y: "60%" }}
                         whileInView={{ y: "0%" }}
                         transition={{
@@ -950,10 +954,10 @@ export const WhyChooseUs = () => {
                           ease: "circInOut",
                           delay: 0.7,
                         }}
-                        className="font-[Kanit] font-[500] text-[#121212] text-center uppercase text-[14px] border-[1.2px] border-[#121212] rounded-full py-1 w-full  flex justify-center items-center hoverAnimationContactBTN relative"
+                        className="font-[Kanit] font-[500] text-[#121212] text-center uppercase text-[14px] border-[1.2px] border-[#121212] rounded-full py-1 w-full flex justify-center items-center hoverAnimationContactBTN relative"
                       >
                         Instagram
-                      </motion.span>
+                      </motion.button>
                     </Link>
                   </motion.div>
                 </div>
@@ -1023,11 +1027,11 @@ export const WhyChooseUs = () => {
                     }}
                     className="w-[60%] flex justify-start items-center gap-4"
                   >
-                    <Link className='w-[30%]'
-                      target="_blank"
+                    <Link
+                      target="_blank" className="w-[30%] "
                       href="https://www.facebook.com/profile.php?id=100089610044002"
                     >
-                      <motion.span
+                      <motion.button
                         initial={{ y: "60%" }}
                         whileInView={{ y: "0%" }}
                         transition={{
@@ -1038,10 +1042,10 @@ export const WhyChooseUs = () => {
                         className="font-[Kanit] font-[500] text-[#121212] text-center uppercase text-[14px] border-[1.2px] border-[#121212] rounded-full py-1 w-full  flex justify-center items-center hoverAnimationContactBTN relative"
                       >
                         FaceBook
-                      </motion.span>
+                      </motion.button>
                     </Link>
-                    <Link className='w-[30%]' target="_blank" href="https://x.com/KaltechServices">
-                      <motion.span
+                    <Link target="_blank" className="w-[30%] " href="https://x.com/KaltechServices">
+                      <motion.button
                         initial={{ y: "60%" }}
                         whileInView={{ y: "0%" }}
                         transition={{
@@ -1052,13 +1056,13 @@ export const WhyChooseUs = () => {
                         className="font-[Kanit]  text-[#121212] text-center uppercase flex justify-center items-center  border-[1.2px] border-[#121212] rounded-full py-1.5 w-full hoverAnimationContactBTN relative"
                       >
                         <XIcon className="text-[17px] font-[800]" />
-                      </motion.span>
+                      </motion.button>
                     </Link>
-                    <Link className='w-[30%]'
-                      target="_blank"
+                    <Link
+                      target="_blank" className="w-[30%] "
                       href="https://www.instagram.com/kaltechconsultancy/"
                     >
-                      <motion.span
+                      <motion.button
                         initial={{ y: "60%" }}
                         whileInView={{ y: "0%" }}
                         transition={{
@@ -1069,7 +1073,7 @@ export const WhyChooseUs = () => {
                         className="font-[Kanit] font-[500] text-[#121212] text-center uppercase text-[14px] border-[1.2px] border-[#121212] rounded-full py-1 w-full flex justify-center items-center hoverAnimationContactBTN relative"
                       >
                         Instagram
-                      </motion.span>
+                      </motion.button>
                     </Link>
                   </motion.div>
 
@@ -1335,7 +1339,38 @@ export const WhyChooseUs = () => {
                       />
                     </svg>
                   </motion.div>
-                 <LearnMoreBTN innerText='Learn More' path='/' />
+                  <button className="flex justify-center items-center gap-3 cursor-pointer bg-[#000] rounded-full w-full text-[#FFF] py-2 font-[Oxanium] font-[600]   learMoreBTNcustomHoverEffect capitalize">
+                    Learn more{" "}
+                    {/* <span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                  >
+                    <circle
+                      cx="6"
+                      cy="6"
+                      r="6"
+                      fill="url(#paint0_linear_65_66)"
+                    />
+                    <defs>
+                      <linearGradient
+                        id="paint0_linear_65_66"
+                        x1="6"
+                        y1="0"
+                        x2="6"
+                        y2="12"
+                        gradientUnits="userSpaceOnUse"
+                      >
+                        <stop stop-color="#BB9406" />
+                        <stop offset="1" stop-color="#433500" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </span> */}
+                  </button>
 
                   <motion.div
                     initial={{ opacity: 0 }}
@@ -1394,13 +1429,13 @@ export const WhyChooseUs = () => {
               <div className="absolute top-0 left-0 z-10 w-full h-full flex flex-col justify-center items-center">
                 <div className="w-[90%] mx-auto flex flex-col justify-center items-center gap-6">
                   <div className="flex flex-col justify-center items-center gap-4">
-                    <h4 className="font-[Oxanium] font-[600] text-3xl uppercase">
+                    <h4 className="font-[Oxanium] font-[600] text-4xl uppercase">
                       Let&apos;s Build
                     </h4>
-                    <h4 className="font-[Oxanium] font-[600] text-3xl uppercase">
+                    <h4 className="font-[Oxanium] font-[600] text-4xl uppercase">
                       Something
                     </h4>
-                    <h4 className="font-[Oxanium] font-[600] text-3xl uppercase">
+                    <h4 className="font-[Oxanium] font-[600] text-4xl uppercase">
                       great together!
                     </h4>
                   </div>
@@ -1449,8 +1484,8 @@ export const WhyChooseUs = () => {
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="90"
-                      height="95"
+                      width="100"
+                      height="105"
                       viewBox="0 0 120 125"
                       fill="none"
                     >
@@ -1472,14 +1507,13 @@ export const WhyChooseUs = () => {
                       delay: 0.3,
                       staggerChildren: 0.5,
                     }}
-                    className="w-full flex justify-start items-center gap-2 "
+                    className="w-full flex justify-start items-center gap-2"
                   >
                     <Link
-                      className="w-[30%]"
                       target="_blank"
                       href="https://www.facebook.com/profile.php?id=100089610044002"
                     >
-                      <motion.span
+                      <motion.button
                         initial={{ y: "60%" }}
                         whileInView={{ y: "0%" }}
                         transition={{
@@ -1487,13 +1521,13 @@ export const WhyChooseUs = () => {
                           ease: "circInOut",
                           delay: 0.5,
                         }}
-                        className="font-[Kanit] font-[500] text-[#121212] text-center uppercase text-[12px] border-[1.2px] border-[#121212] rounded-full py-1 w-full  flex justify-center items-center hoverAnimationContactBTN relative"
+                        className="font-[Kanit] font-[500] text-[#121212] text-center uppercase text-[12px] border-[1.2px] border-[#121212] rounded-full py-1 w-[30%]  flex justify-center items-center hoverAnimationContactBTN relative"
                       >
                         FaceBook
-                      </motion.span>
+                      </motion.button>
                     </Link>
-                    <Link className="w-[30%]" target="_blank" href="https://x.com/KaltechServices">
-                      <motion.span
+                    <Link target="_blank" href="https://x.com/KaltechServices">
+                      <motion.button
                         initial={{ y: "60%" }}
                         whileInView={{ y: "0%" }}
                         transition={{
@@ -1501,16 +1535,16 @@ export const WhyChooseUs = () => {
                           ease: "circInOut",
                           delay: 0.6,
                         }}
-                        className="font-[Kanit]  text-[#121212] text-center uppercase flex justify-center items-center  border-[1.2px] border-[#121212] rounded-full py-1.5 w-full hoverAnimationContactBTN relative"
+                        className="font-[Kanit]  text-[#121212] text-center uppercase flex justify-center items-center  border-[1.2px] border-[#121212] rounded-full py-1.5 w-[30%] hoverAnimationContactBTN relative"
                       >
                         <XIcon className="text-[15px] font-[800]" />
-                      </motion.span>
+                      </motion.button>
                     </Link>
                     <Link
                       target="_blank"
-                      href="https://www.instagram.com/kaltechconsultancy/" className="w-[30%]"
+                      href="https://www.instagram.com/kaltechconsultancy/"
                     >
-                      <motion.span
+                      <motion.button
                         initial={{ y: "60%" }}
                         whileInView={{ y: "0%" }}
                         transition={{
@@ -1518,10 +1552,10 @@ export const WhyChooseUs = () => {
                           ease: "circInOut",
                           delay: 0.7,
                         }}
-                        className="font-[Kanit] font-[500] text-[#121212] text-center uppercase text-[12px] border-[1.2px] border-[#121212] rounded-full py-1 w-full flex justify-center items-center hoverAnimationContactBTN relative"
+                        className="font-[Kanit] font-[500] text-[#121212] text-center uppercase text-[12px] border-[1.2px] border-[#121212] rounded-full py-1 w-[30%] flex justify-center items-center hoverAnimationContactBTN relative"
                       >
                         Instagram
-                      </motion.span>
+                      </motion.button>
                     </Link>
                   </motion.div>
                 </div>

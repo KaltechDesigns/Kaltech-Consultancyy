@@ -173,10 +173,9 @@ const DigitalDreamsTab = () => {
               }}
               className="text-xl font-[Oxanium] font-[400] my-3"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-              sit amet finibus nunc. Phasellus ante dolor, luctus in lorem sit
-              amet, pulvinar ultricies risus. Proin sodales rutrum nisi, eget
-              ultricies urna vulputate ut. Aenean.
+              We listen, we care, we deliver. We don&apos;t sell products, we
+                    provide solutions that consistently exceeds your
+                    expectation.
             </motion.p>
 
             <motion.button
@@ -261,10 +260,9 @@ const DigitalDreamsMob = () => {
             }}
             className="text-base font-[Oxanium] font-[400] my-3"
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-            sit amet finibus nunc. Phasellus ante dolor, luctus in lorem sit
-            amet, pulvinar ultricies risus. Proin sodales rutrum nisi, eget
-            ultricies urna vulputate ut. Aenean.
+        We listen, we care, we deliver. We don&apos;t sell products, we
+                    provide solutions that consistently exceeds your
+                    expectation.
           </motion.p>
 
           <motion.button

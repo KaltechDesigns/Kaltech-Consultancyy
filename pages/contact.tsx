@@ -1,91 +1,67 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
-import emailjs from "@emailjs/browser";
 
 import { motion } from "framer-motion";
-import { toast } from "react-toastify";
 
 import { Footer } from "@/components/common/Footers/Footer";
 import { Navbar } from "@/components/common/Navbar";
+import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 
-interface userDetailsTypes {
-  name: string;
+interface emailInfoType {
+  fullName: string;
   email: string;
-  phone: string;
+  phonenumber: string;
   subject: string;
   message: string;
 }
 
-/**
- * The function `sendEmails` is an asynchronous function that sends an email using emailjs based on
- * user details, displays success or error messages using toast notifications, and resets user details
- * after sending the email.
- * @param {userDetailsTypes} userDeltails - The `userDeltails` parameter in the `sendEmails` function
- * is an object of type `userDetailsTypes` that contains details of the user such as name, email,
- * phone, subject, and message. These details are used to populate the email template that will be
- * sent.
- * @param {any} setSending - The `setSending` parameter in the `sendEmails` function is a function that
- * is used to update the state to indicate whether the email sending process is in progress or not.
- * When `setSending(true)` is called, it sets the state to indicate that sending is in progress, and `
- * @param {any} setUserDeltails - The `setUserDeltails` parameter in the `sendEmails` function is a
- * function that is used to update the user details after sending the email. In the function, it is
- * called to reset the user details to empty values after a successful email send operation. This
- * ensures that the form
- * @returns If the required fields are not filled, the function will return early after displaying an
- * error message. If the email is successfully sent, a success message will be displayed and the user
- * details will be reset. If an error occurs during the process, an error message will be displayed.
- */
-const sendEmails = async (
-  userDeltails: userDetailsTypes,
-  setSending: any,
-  setUserDeltails: any
-) => {
-  try {
-    setSending(true);
-    if (
-      !userDeltails.name ||
-      !userDeltails.message ||
-      !userDeltails.subject ||
-      !userDeltails.email
-    ) {
-      toast.error("Fill the required fields !!");
-      setSending(false);
-      return;
-    }
-
-    const templateParams = {
-      from_name: userDeltails.name,
-      email_id: userDeltails.email,
-      phone: userDeltails.phone,
-      subject: userDeltails.subject,
-      message: userDeltails.message,
-    };
-
-    const sendEmail = await emailjs.send(
-      "service_8ecwjgv",
-      "template_tozscrh",
-      templateParams,
-      "1BxZpTTGfCmtTXvFy"
-    );
-
-    if (sendEmail.status === 200 || sendEmail.text === "OK") {
-      toast.success(
-        "Your message has been sent successfully. We will get back to you shortly."
-      );
-      setUserDeltails({
-        name: "",
-        email: "",
-        phone: "",
-        subject: "",
-        message: "",
-      });
-      setSending(false);
-    }
-  } catch (error) {
-    console.log(error);
-    toast.error("Something went wrong !!");
+const handleSendEmail = async (contactDeltails: emailInfoType,setLoading:any,setContactDeltails:any) => {
+  setLoading(true);
+  if (
+    !contactDeltails.fullName ||
+    !contactDeltails.email ||
+    !contactDeltails.phonenumber ||
+    !contactDeltails.message ||
+    !contactDeltails.subject
+  ) {
+    toast.error("fill the required fields");    
+    setLoading(false);
+    return;
   }
+
+  const templateParams = {
+    user_name: contactDeltails.fullName,
+    user_email: contactDeltails.email,
+    user_phone: contactDeltails.phonenumber,
+    subject: contactDeltails.subject,
+    message: contactDeltails.message,
+  };
+
+  const sendMail = await emailjs.send(
+    "service_o9et1ui", // Replace with your actual service ID
+    "template_99v2eul", // Replace with your actual template ID
+    templateParams,
+    "yhr37czyaD6x0SuJT" // Replace with your actual public key
+  );
+
+  if (sendMail.status === 200) {
+    toast.success("Your message has been sent successfully. We will get back to you shortly.")
+    setLoading(false)
+    setContactDeltails({
+      fullName: "",
+      email: "",
+      subject: "",
+      phonenumber: "",
+      message: "",
+    })
+  } else {
+    console.log("Some error occurred");
+    setLoading(false)
+  }
+
+  
 };
 
 const Contact: React.FC = () => {
@@ -94,13 +70,13 @@ const Contact: React.FC = () => {
   `phonenumber`, and `message`, all initialized to empty strings. The `setContactDeltails` function
   can be used to update the state of `contactDeltails` with new values. */
   const [contactDeltails, setContactDeltails] = useState({
-    name: "",
+    fullName: "",
     email: "",
-    phone: "",
     subject: "",
+    phonenumber: "",
     message: "",
   });
-  const [isSending, setIsSending] = useState(false);
+  const [isLoading,setIsLoading] = useState(false);
   /**
    * The `handleChange` function in TypeScript React is used to update the state with the new value of a
    * form input field.
@@ -115,6 +91,9 @@ const Contact: React.FC = () => {
       [name]: value,
     });
   };
+
+ 
+
 
   return (
     <>
@@ -142,7 +121,7 @@ const Contact: React.FC = () => {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.8, ease: "circInOut", delay: 0.4 }}
-                  className="font-[Oxanium] 2xl:text-base xl:text-lg lg:text-base font-[400]"
+                  className="font-[Oxanium] text-base font-[400]"
                 >
                   Ready to embark on this journey with us? Contact our team to
                   schedule your initial consultation and discover how we can
@@ -181,7 +160,7 @@ const Contact: React.FC = () => {
                     className="font-[Oxanium] text-lg lg:landscape:text-base font-[700]"
                     href="/"
                   >
-                    103 Stoneledge Ct, Elizabethtown, KY 42701, Kentucky, USA.
+                   185 N Wilson Rd, KY 40160, Radcliff Kentucky.
                   </Link>
                 </div>
               </motion.div>
@@ -198,8 +177,8 @@ const Contact: React.FC = () => {
                       className="w-full font-[Oxanium] font-[400] text-lg placeholder:text-[#121212] py-2 px-3 outline-none border-b-2 border-[#C2C2C2] bg-transparent"
                       placeholder="Name *"
                       onChange={handleChange}
-                      name="name"
-                      value={contactDeltails.name}
+                      name="fullName"
+                      value={contactDeltails.fullName}
                     />
                   </div>
                   <div className="w-[50%]">
@@ -213,7 +192,7 @@ const Contact: React.FC = () => {
                     />
                   </div>
                 </div>
-
+                {/* change */}
                 <div className="flex justify-between items-center gap-10 w-full">
                   <div className="w-[50%]">
                     <input
@@ -221,8 +200,8 @@ const Contact: React.FC = () => {
                       className="w-full font-[Oxanium] font-[400] text-lg placeholder:text-[#121212] py-2 px-3 outline-none border-b-2 border-[#C2C2C2] bg-transparent"
                       placeholder="Phone"
                       onChange={handleChange}
-                      name="phone"
-                      value={contactDeltails.phone}
+                      name="phonenumber"
+                      value={contactDeltails.phonenumber}
                     />
                   </div>
                   <div className="w-[50%]">
@@ -258,18 +237,14 @@ const Contact: React.FC = () => {
                     delay: 0.4,
                     times: [0.2, 0.6, 1],
                   }}
-                  onClick={() =>
-                    sendEmails(
-                      contactDeltails,
-                      setIsSending,
-                      setContactDeltails
-                    )
-                  }
-                  className="text-[#2C2C2C] flex justify-center items-center gap-2 font-[Oxanium] font-[400] text-base w-32 h-32 border border-[#2C2C2C]  rounded-full relative hoverAnimationContactBTN overflow-hidden z-10 transition-colors duration-200 ease-in-out delay-100 self-start p-3 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-90"
-                  disabled={isSending}
+                  onClick={() => handleSendEmail(contactDeltails,setIsLoading,setContactDeltails)}
+                  className={`text-[#2C2C2C] flex justify-center items-center gap-2 font-[Oxanium] font-[400] text-base w-32 h-32 border border-[#2C2C2C]  rounded-full relative hoverAnimationContactBTN overflow-hidden z-10 transition-colors duration-200 ease-in-out delay-100 self-start p-3  disabled:opacity-55 disabled:cursor-not-allowed`}
+                  disabled={isLoading}
                 >
-                  {isSending ? "Sending..." : "Send Message"}
-
+                  {
+                    isLoading ? 'Sending...':'Send Message'
+                  }
+                  
                   <span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -297,22 +272,21 @@ const Contact: React.FC = () => {
     </>
   );
 };
-
 export default Contact;
 
 const ContactTab = () => {
-  /* The above code snippet is using React's useState hook to initialize a state variable called
+    /* The above code snippet is using React's useState hook to initialize a state variable called
   `contactDeltails` with an object containing properties for `fullName`, `email`, `subject`,
   `phonenumber`, and `message`, all initialized to empty strings. The `setContactDeltails` function
   can be used to update the state of `contactDeltails` with new values. */
   const [contactDeltails, setContactDeltails] = useState({
-    name: "",
+    fullName: "",
     email: "",
-    phone: "",
     subject: "",
+    phonenumber: "",
     message: "",
   });
-  const [isSending, setIsSending] = useState(false);
+  const [isLoading,setIsLoading] = useState(false);
   /**
    * The `handleChange` function in TypeScript React is used to update the state with the new value of a
    * form input field.
@@ -367,9 +341,9 @@ const ContactTab = () => {
                     type="text"
                     className="w-full font-[Oxanium] font-[400] text-lg placeholder:text-[#121212] py-2 px-3 outline-none border-b-2 border-[#C2C2C2] bg-transparent"
                     placeholder="Name *"
-                    value={contactDeltails.name}
+                    name="fullName"
+                    value={contactDeltails.fullName}
                     onChange={handleChange}
-                    name="name"
                   />
                 </div>
                 <div className="w-[50%]">
@@ -377,9 +351,9 @@ const ContactTab = () => {
                     type="text"
                     className="w-full font-[Oxanium] font-[400] text-lg placeholder:text-[#121212] py-2 px-3 outline-none border-b-2 border-[#C2C2C2] bg-transparent"
                     placeholder="Email *"
+                    name="email"
                     value={contactDeltails.email}
                     onChange={handleChange}
-                    name="email"
                   />
                 </div>
               </div>
@@ -390,8 +364,8 @@ const ContactTab = () => {
                     type="text"
                     className="w-full font-[Oxanium] font-[400] text-lg placeholder:text-[#121212] py-2 px-3 outline-none border-b-2 border-[#C2C2C2] bg-transparent"
                     placeholder="Phone"
-                    name="phone"
-                    value={contactDeltails.phone}
+                    name="phonenumber"
+                    value={contactDeltails.phonenumber}
                     onChange={handleChange}
                   />
                 </div>
@@ -400,8 +374,8 @@ const ContactTab = () => {
                     type="text"
                     className="w-full font-[Oxanium] font-[400] text-lg placeholder:text-[#121212] py-2 px-3 outline-none border-b-2 border-[#C2C2C2] bg-transparent"
                     placeholder="Subject *"
-                    value={contactDeltails.subject}
                     name="subject"
+                    value={contactDeltails.subject}
                     onChange={handleChange}
                   />
                 </div>
@@ -412,8 +386,8 @@ const ContactTab = () => {
                   <textarea
                     className="w-full font-[Oxanium] font-[400] text-lg placeholder:text-[#121212] py-2 px-3 outline-none border-b-2 border-[#C2C2C2] bg-transparent"
                     placeholder="Message *"
-                    value={contactDeltails.message}
                     name="message"
+                    value={contactDeltails.message}
                     onChange={handleChange}
                   ></textarea>
                 </div>
@@ -428,13 +402,13 @@ const ContactTab = () => {
                   delay: 0.4,
                   times: [0.2, 0.6, 1],
                 }}
-                className="text-[#2C2C2C] flex justify-center items-center gap-2 font-[Oxanium] font-[400] text-base w-32 h-32 border border-[#2C2C2C]  rounded-full relative hoverAnimationContactBTN overflow-hidden z-10 transition-colors duration-200 ease-in-out delay-100 self-center p-3 disabled:pointer-events-none disabled:opacity-90 disabled:cursor-not-allowed"
-                disabled={isSending}
-                onClick={() =>
-                  sendEmails(contactDeltails, setIsSending, setContactDeltails)
-                }
+                onClick={()=>handleSendEmail(contactDeltails,setIsLoading,setContactDeltails)}
+                className="text-[#2C2C2C] flex justify-center items-center gap-2 font-[Oxanium] font-[400] text-base w-32 h-32 border border-[#2C2C2C]  rounded-full relative hoverAnimationContactBTN overflow-hidden z-10 transition-colors duration-200 ease-in-out delay-100 self-center p-3 disabled:opacity-55 cursor-not-allowed"
+                disabled={isLoading}
               >
-                {isSending ? "Sending..." : "Send Message"}
+                {
+                    isLoading ? 'Sending...':'Send Message'
+                  }
                 <span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -478,7 +452,7 @@ const ContactTab = () => {
                 info@kaltechdesigns.com
               </Link>
               <Link className="font-[Oxanium] text-lg font-[700]" href="/">
-                103 Stoneledge Ct, Elizabethtown, KY 42701, Kentucky, USA.
+              185 N Wilson Rd, KY 40160, Radcliff Kentucky.
               </Link>
             </div>
           </motion.div>
@@ -489,18 +463,18 @@ const ContactTab = () => {
 };
 
 const ContactMob = () => {
-  /* The above code snippet is using React's useState hook to initialize a state variable called
+     /* The above code snippet is using React's useState hook to initialize a state variable called
   `contactDeltails` with an object containing properties for `fullName`, `email`, `subject`,
   `phonenumber`, and `message`, all initialized to empty strings. The `setContactDeltails` function
   can be used to update the state of `contactDeltails` with new values. */
   const [contactDeltails, setContactDeltails] = useState({
-    name: "",
+    fullName: "",
     email: "",
-    phone: "",
     subject: "",
+    phonenumber: "",
     message: "",
   });
-  const [isSending, setIsSending] = useState(false);
+  const [isLoading,setIsLoading] = useState(false);
   /**
    * The `handleChange` function in TypeScript React is used to update the state with the new value of a
    * form input field.
@@ -519,22 +493,22 @@ const ContactMob = () => {
     <>
       <div className="flex justify-center items-center py-5 md:hidden lg:hidden xl:hidden 2xl:hidden">
         <div className="w-[90%]">
-          <div className="w-full">
+          <div className="w-[90%]">
             <motion.h1
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8, ease: "circInOut", delay: 0.2 }}
-              className="AzonixFont font-[Azonix,Oxanium] text-5xl uppercase font-[400]"
+              className="AzonixFont font-[Azonix,Oxanium] text-6xl uppercase font-[400]"
             >
               Let&apos;s get in touch
             </motion.h1>
           </div>
-          <div className="w-full my-3">
+          <div className="w-[80%] my-3">
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.8, ease: "circInOut", delay: 0.4 }}
-              className="font-[Oxanium] text-sm font-[400]"
+              className="font-[Oxanium] text-lg font-[500]"
             >
               Ready to embark on this journey with us? Contact our team to
               schedule your initial consultation and discover how we can help
@@ -545,17 +519,17 @@ const ContactMob = () => {
           <div className="flex flex-col justify-center items-center gap-5 my-5">
             <div className="w-full">
               <input
-                className="w-full font-[Oxanium] font-[400] text-base placeholder:text-[#121212] py-2 px-3 outline-none border-b-2 border-[#C2C2C2] bg-transparent"
+                className="w-full font-[Oxanium] font-[400] text-lg placeholder:text-[#121212] py-2 px-3 outline-none border-b-2 border-[#C2C2C2] bg-transparent"
                 placeholder="Name *"
                 type="text"
-                name="name"
-                value={contactDeltails.name}
+                value={contactDeltails.fullName}
+                name="fullName"
                 onChange={handleChange}
               />
             </div>
             <div className="w-full">
               <input
-                className="w-full font-[Oxanium] font-[400] text-base placeholder:text-[#121212] py-2 px-3 outline-none border-b-2 border-[#C2C2C2] bg-transparent"
+                className="w-full font-[Oxanium] font-[400] text-lg placeholder:text-[#121212] py-2 px-3 outline-none border-b-2 border-[#C2C2C2] bg-transparent"
                 placeholder="Email *"
                 type="text"
                 value={contactDeltails.email}
@@ -565,30 +539,30 @@ const ContactMob = () => {
             </div>
             <div className="w-full">
               <input
-                className="w-full font-[Oxanium] font-[400] text-base placeholder:text-[#121212] py-2 px-3 outline-none border-b-2 border-[#C2C2C2] bg-transparent"
+                className="w-full font-[Oxanium] font-[400] text-lg placeholder:text-[#121212] py-2 px-3 outline-none border-b-2 border-[#C2C2C2] bg-transparent"
                 placeholder="Phone "
                 type="text"
-                name="phone"
-                value={contactDeltails.phone}
+                value={contactDeltails.phonenumber}
+                name="phonenumber"
                 onChange={handleChange}
               />
             </div>
             <div className="w-full">
               <input
-                className="w-full font-[Oxanium] font-[400] text-base placeholder:text-[#121212] py-2 px-3 outline-none border-b-2 border-[#C2C2C2] bg-transparent"
+                className="w-full font-[Oxanium] font-[400] text-lg placeholder:text-[#121212] py-2 px-3 outline-none border-b-2 border-[#C2C2C2] bg-transparent"
                 placeholder="Subject *"
                 type="text"
-                name="subject"
                 value={contactDeltails.subject}
+                name="subject"
                 onChange={handleChange}
               />
             </div>
             <div className="w-full">
               <textarea
-                className="w-full font-[Oxanium] font-[400] text-base placeholder:text-[#121212] py-2 px-3 outline-none border-b-2 border-[#C2C2C2] bg-transparent"
+                className="w-full font-[Oxanium] font-[400] text-lg placeholder:text-[#121212] py-2 px-3 outline-none border-b-2 border-[#C2C2C2] bg-transparent"
                 placeholder="Message *"
-                name="message"
                 value={contactDeltails.message}
+                name="message"
                 onChange={handleChange}
               ></textarea>
             </div>
@@ -602,13 +576,13 @@ const ContactMob = () => {
                 delay: 0.4,
                 times: [0.2, 0.6, 1],
               }}
-              className="text-[#2C2C2C] flex justify-center items-center gap-2 font-[Oxanium] font-[400] text-sm w-28 h-28 border border-[#2C2C2C]  rounded-full relative hoverAnimationContactBTN overflow-hidden z-10 transition-colors duration-200 ease-in-out delay-100 self-center p-3 disabled:opacity-90 disabled:pointer-events-none disabled:cursor-not-allowed"
-              disabled={isSending}
-              onClick={() =>
-                sendEmails(contactDeltails, setIsSending, setContactDeltails)
-              }
+              onClick={()=>handleSendEmail(contactDeltails,setIsLoading,setContactDeltails)}
+              className="text-[#2C2C2C] flex justify-center items-center gap-2 font-[Oxanium] font-[400] text-sm w-28 h-28 border border-[#2C2C2C]  rounded-full relative hoverAnimationContactBTN overflow-hidden z-10 transition-colors duration-200 ease-in-out delay-100 self-center p-3 disabled:opacity-55 cursor-not-allowed"
+              disabled={isLoading}
             >
-              {isSending ? "Sending..." : "Send Message"}
+              {
+                    isLoading ? 'Sending...':'Send Message'
+                  }
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -634,27 +608,27 @@ const ContactMob = () => {
             className="w-full flex flex-col justify-center items-center gap-8 my-10"
           >
             <div className="flex justify-center items-center gap-1.5">
-              <h4 className="font-[Oxanium] text-base font-[400]">or just</h4>
-              <h4 className="font-[Oxanium] text-base font-[400]">say hello!</h4>
+              <h4 className="font-[Oxanium] text-2xl font-[400]">or just</h4>
+              <h4 className="font-[Oxanium] text-2xl font-[400]">say hello!</h4>
             </div>
             <div className="flex flex-col justify-center items-center gap-2 w-full">
               <Link
-                className="font-[Oxanium] text-base font-[700] underline underline-offset-4"
+                className="font-[Oxanium] text-lg font-[700] underline underline-offset-4"
                 href="tel:+1(931)-266-6101"
               >
                 +1(931)-266-6101
               </Link>
               <Link
-                className="font-[Oxanium] text-base font-[700] underline underline-offset-4"
+                className="font-[Oxanium] text-lg font-[700] underline underline-offset-4"
                 href="mailto:info@kaltechdesigns.com"
               >
                 info@kaltechdesigns.com
               </Link>
               <Link
-                className="font-[Oxanium] text-base font-[700] text-center"
+                className="font-[Oxanium] text-lg font-[700] text-center"
                 href="/"
               >
-                103 Stoneledge Ct, Elizabethtown, KY 42701, Kentucky, USA.
+                185 N Wilson Rd, KY 40160, Radcliff Kentucky.
               </Link>
             </div>
           </motion.div>

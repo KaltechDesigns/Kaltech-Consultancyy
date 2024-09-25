@@ -10,12 +10,37 @@
 
 
 
+/* lenis css start  "important for smooth scroll" */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+/* lenis css end  "important for smooth scroll" */
+
+
+
 body {
   overflow-x: hidden;
 }
-/* ::-webkit-scrollbar{
+::-webkit-scrollbar{
   display: none;
-} */
+}
 @font-face {
   font-family: "Azonix";
   src: url("/fonts/Azonix.otf") format("otf");
@@ -370,5 +395,9 @@ body {
 }
 .learMoreBTNcustomHoverEffect:hover .spanEle img {
   opacity: 1;
+}
+
+.customLine__height{
+  line-height: normal;
 }
 

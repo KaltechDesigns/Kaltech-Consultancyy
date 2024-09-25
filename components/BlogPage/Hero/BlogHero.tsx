@@ -90,7 +90,7 @@ export const BlogHeroSection = () => {
                     src={`/${cur.featureImg}`}
                     alt="blog-image"
                     loading="lazy"
-                    className="transition-transform duration-500 ease-in-out brightness-75 object-cover"
+                    className="transition-transform duration-500 ease-in-out brightness-75"
                   />
                   <div className="absolute w-full h-full bg-transparent top-0 left-0 flex justify-end items-end z-10">
                     <div className="w-full h-[50%] p-3 flex flex-col justify-center items-start">
@@ -109,7 +109,7 @@ export const BlogHeroSection = () => {
                         {cur.mainTitle}
                       </Link>
                       <p className="text-lg font-[Oxanium] font-[400] my-2 text-[#FFF]">
-                        {cur.createdDate}
+                        Sept. 02,2024
                       </p>
                     </div>
                   </div>
@@ -136,7 +136,7 @@ export const BlogHeroSection = () => {
                       {blogData[4].mainTitle}
                     </Link>
                     <p className="text-base font-[Oxanium] font-[400] my-2 text-[#FFF]">
-                      {blogData[4].createdDate}
+                      Aug 10,2024
                     </p>
                   </div>
                 </div>
@@ -160,7 +160,7 @@ export const BlogHeroSection = () => {
                     {blogData[5].mainTitle}
                     </Link>
                     <p className="text-base font-[Oxanium] font-[400] my-2 text-[#FFF]">
-                      {blogData[5].createdDate}
+                      July 15,2024
                     </p>
                   </div>
                 </div>
@@ -241,7 +241,7 @@ const BlogHeroSectionTab = () => {
                         {BlogData[currentIndex].heading}
                       </h3>
                       <p className="text-lg font-[Oxanium] font-[400] my-2 text-[#FFF]">
-                        May 02,2024
+                      Sept 02,2024
                       </p>
                     </div>
                   </div>
@@ -268,7 +268,7 @@ const BlogHeroSectionTab = () => {
                       Growth
                     </h3>
                     <p className="text-base font-[Oxanium] font-[400] my-2 text-[#FFF]">
-                      May 02,2024
+                      Aug 10,2024
                     </p>
                   </div>
                 </div>
@@ -291,7 +291,7 @@ const BlogHeroSectionTab = () => {
                       How to Run a Successfull Busniess in a fall?
                     </h3>
                     <p className="text-base font-[Oxanium] font-[400] my-2 text-[#FFF]">
-                      May 02,2024
+                      July 15, 2024
                     </p>
                   </div>
                 </div>
@@ -327,7 +327,7 @@ const BlogHeroSectionMob = () => {
               initial={{ x: "-100%" }}
               whileInView={{ x: "0%" }}
               transition={{ duration: 0.6, ease: "circInOut", delay: 0.1 }}
-              className="uppercase AzonixFont font-[Azonix,Oxanium] font-[400] text-3xl"
+              className="uppercase AzonixFont font-[Azonix,Oxanium] font-[400] text-5xl"
             >
               informative blogs for our digital creatives.
             </motion.h1>
@@ -368,14 +368,14 @@ const BlogHeroSectionMob = () => {
                         {BlogData[currentIndex].heading}
                       </h3>
                       <p className="text-sm font-[Oxanium] font-[400] my-1 text-[#FFF]">
-                        May 02,2024
+                        Sept 02,2024
                       </p>
                     </div>
                   </div>
                 </motion.div>
               ))}
             </motion.div>
-            <div className="flex justify-between items-center gap-2 w-full h-[30%] ">
+            <div className="flex justify-between items-center gap-2 w-full h-[25%] ">
               <motion.div
                 initial={{ y: "110%", opacity: 0 }}
                 whileInView={{ y: "0%", opacity: 1 }}
@@ -387,16 +387,16 @@ const BlogHeroSectionMob = () => {
                   src={BlogHeroImg2}
                   alt="blog-image"
                   loading="lazy"
-                  className="object-cover brightness-75"
+                  className="object-cover"
                 />
                 <div className="absolute w-full h-full bg-transparent top-0 left-0 flex justify-end items-end">
                   <div className="w-full h-[60%] p-1 flex flex-col justify-center items-start">
-                    <h3 className="text-[12px] font-[Oxanium] font-[700] my-.5 text-[#FFF]">
+                    <h3 className="text-sm font-[Oxanium] font-[700] my-1 text-[#FFF]">
                       The Importance of Social Media Marketing in Busniess
                       Growth
                     </h3>
-                    <p className="text-[12px] font-[Oxanium] font-[400] my-.5 text-[#FFF]">
-                      May 02,2024
+                    <p className="text-[12px] font-[Oxanium] font-[400] my-1 text-[#FFF]">
+                      Aug 10,2024
                     </p>
                   </div>
                 </div>
@@ -412,15 +412,15 @@ const BlogHeroSectionMob = () => {
                   src={BlogHeroImg3}
                   alt="blog-image"
                   loading="lazy"
-                  className="object-cover brightness-75"
+                  className="object-cover"
                 />
                 <div className="absolute w-full h-full bg-transparent top-0 left-0 flex justify-end items-end">
                   <div className="w-full h-[60%] p-1 flex flex-col justify-center items-start">
-                    <h3 className="text-[12px] font-[Oxanium] font-[700] my-.5 text-[#FFF]">
+                    <h3 className="text-sm font-[Oxanium] font-[700] my-1 text-[#FFF]">
                       How to Run a Successfull Busniess in a fall?
                     </h3>
-                    <p className="text-[12px] font-[Oxanium] font-[400] my-.5 text-[#FFF]">
-                      May 02,2024
+                    <p className="text-[12px] font-[Oxanium] font-[400] my-1 text-[#FFF]">
+                      July 15, 2024
                     </p>
                   </div>
                 </div>

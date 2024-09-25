@@ -17,7 +17,7 @@ import { useRouter } from "next/router";
 interface blogDataType {
   id: string;
   articalImg: string;
-  featureImg:string,
+  featureImg: string;
   mainTitle: string;
   mainInfo: string;
   headingFrt: string;
@@ -50,7 +50,7 @@ const BlogID = () => {
       setCurrentBlog(blog);
     }
   }, [params?.id]);
-  console.log(currentBlog?.articalImg)
+  console.log(currentBlog?.articalImg);
 
   return (
     <>
@@ -91,7 +91,13 @@ const BlogID = () => {
               transition={{ duration: 0.5, ease: "backInOut" }}
               className="h-[60%] relative w-full"
             >
-              <Image src={`/${currentBlog?.articalImg}`} fill loading="lazy" className="object-cover" alt={`${currentBlog?.articalImg}`} />
+              <Image
+                src={`/${currentBlog?.articalImg}`}
+                fill
+                loading="lazy"
+                className="object-cover"
+                alt={`${currentBlog?.articalImg}`}
+              />
             </motion.div>
           </div>
         </div>

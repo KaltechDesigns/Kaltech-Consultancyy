@@ -694,7 +694,7 @@ const ProvidedServicesMob = () => {
               <div ref={nameMainWrapperRef}>
                 <h3
                   ref={kaltechText}
-                  className="text-[22px] font-[400] AzonixFont font-[Azonix,Oxanium] text-[#000000] uppercase"
+                  className="text-[26px] font-[400] AzonixFont font-[Azonix,Oxanium] text-[#000000] uppercase"
                 >
                   Kaltech Consultancy
                 </h3>
@@ -705,7 +705,7 @@ const ProvidedServicesMob = () => {
                 initial={{ opacity: 0, x: "-95%" }}
                 whileInView={{ opacity: 1, x: "0%" }}
                 transition={{ duration: 0.7, ease: "backInOut", delay: 0.4 }}
-                className="AzonixFont font-[Azonix,Oxanium] text-xl font-[400]"
+                className="AzonixFont font-[Azonix,Oxanium] text-2xl font-[400]"
               >
                 Development services
               </motion.h4>
@@ -720,7 +720,7 @@ const ProvidedServicesMob = () => {
                   onMouseEnter={() => handleHoverAnimation("serviceBox-1")}
                   onMouseLeave={() => handleMouseLeave("serviceBox-1")}
                   id="serviceBox-1"
-                  className="border border-[#000] p-4 overflow-hidden h-64"
+                  className="border border-[#000] p-4 overflow-hidden h-80"
                 >
                   <div
                     id="serviceIconWrapper"
@@ -733,26 +733,58 @@ const ProvidedServicesMob = () => {
                       alt="app-dev-icon"
                     />
                   </div>
-                  <h4 className="font-[Oxanium] text-lg font-[700] text-[#000] my-4">
+                  <h4 className="font-[Oxanium] text-2xl font-[700] text-[#000] my-4">
                     Mobile Application Development.
                   </h4>
                   <p
                     id="serviceSmallInfo"
-                    className="font-[Oxanium] text-sm font-[400] text-[#000]"
+                    className="font-[Oxanium] text-base font-[400] text-[#000]"
                   >
                     Experience the latest UX/UI design principles implemented to
                     your projects by contacting our mobile development team.
                   </p>
-                  <div id="learnMoreBTN">
-                    <LearnMoreBTN innerText='Contact Us' path='/contact' />
-                 </div>
+                  <button
+                    id="learnMoreBTN"
+                    className="flex justify-center items-center gap-3 cursor-pointer bg-[#000] rounded-full w-[50%] text-[#FFF] py-3 font-[Oxanium] font-[600] opacity-0 "
+                  >
+                    Contact Us{" "}
+                    <span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 12 12"
+                        fill="none"
+                      >
+                        <circle
+                          cx="6"
+                          cy="6"
+                          r="6"
+                          fill="url(#paint0_linear_65_66)"
+                        />
+                        <defs>
+                          <linearGradient
+                            id="paint0_linear_65_66"
+                            x1="6"
+                            y1="0"
+                            x2="6"
+                            y2="12"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#BB9406" />
+                            <stop offset="1" stop-color="#433500" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </span>
+                  </button>
                 </div>
 
                 <div
                   onMouseEnter={() => handleHoverAnimation("serviceBox-2")}
                   onMouseLeave={() => handleMouseLeave("serviceBox-2")}
                   id="serviceBox-2"
-                  className="border border-[#000] p-4 h-64 overflow-hidden"
+                  className="border border-[#000] p-4 h-80 overflow-hidden"
                 >
                   <div
                     id="serviceIconWrapper"
@@ -765,27 +797,59 @@ const ProvidedServicesMob = () => {
                       alt="app-dev-icon"
                     />
                   </div>
-                  <h4 className="font-[Oxanium] text-lg font-[700] text-[#000] my-4">
+                  <h4 className="font-[Oxanium] text-2xl font-[700] text-[#000] my-4">
                     Web design and Development.
                   </h4>
                   <p
                     id="serviceSmallInfo"
-                    className="font-[Oxanium] text-sm font-[400] text-[#000]"
+                    className="font-[Oxanium] text-base font-[400] text-[#000]"
                   >
                     Reimagining and transforming your ideas into reality we
                     bring your visions from concept to code pixel by pixel.
                   </p>
 
-                  <div id="learnMoreBTN">
-                    <LearnMoreBTN innerText='Contact Us' path='/contact' />
-                 </div>
+                  <button
+                    id="learnMoreBTN"
+                    className="flex justify-center items-center gap-3 cursor-pointer bg-[#000] rounded-full w-[50%] text-[#FFF] py-3 font-[Oxanium] font-[600] opacity-0 "
+                  >
+                    Contact Us{" "}
+                    <span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 12 12"
+                        fill="none"
+                      >
+                        <circle
+                          cx="6"
+                          cy="6"
+                          r="6"
+                          fill="url(#paint0_linear_65_66)"
+                        />
+                        <defs>
+                          <linearGradient
+                            id="paint0_linear_65_66"
+                            x1="6"
+                            y1="0"
+                            x2="6"
+                            y2="12"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#BB9406" />
+                            <stop offset="1" stop-color="#433500" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </span>
+                  </button>
                 </div>
 
                 <div
                   onMouseEnter={() => handleHoverAnimation("serviceBox-3")}
                   onMouseLeave={() => handleMouseLeave("serviceBox-3")}
                   id="serviceBox-3"
-                  className="border border-[#000] p-4 h-64 overflow-hidden"
+                  className="border border-[#000] p-4 h-80 overflow-hidden"
                 >
                   <div
                     id="serviceIconWrapper"
@@ -798,19 +862,51 @@ const ProvidedServicesMob = () => {
                       alt="app-dev-icon"
                     />
                   </div>
-                  <h4 className="font-[Oxanium] text-lg font-[700] text-[#000] my-4">
+                  <h4 className="font-[Oxanium] text-2xl font-[700] text-[#000] my-4">
                     Content Management Systems.
                   </h4>
                   <p
                     id="serviceSmallInfo"
-                    className="font-[Oxanium] text-sm font-[400] text-[#000]"
+                    className="font-[Oxanium] text-base font-[400] text-[#000]"
                   >
                     We design custom CMS to help you efficiently manage and
                     optimize your staff, customers and your business resources.
                   </p>
-                  <div id="learnMoreBTN">
-                    <LearnMoreBTN innerText='Contact Us' path='/contact' />
-                 </div>
+                  <button
+                    id="learnMoreBTN"
+                    className="flex justify-center items-center gap-3 cursor-pointer bg-[#000] rounded-full w-[50%] text-[#FFF] py-3 font-[Oxanium] font-[600] opacity-0 "
+                  >
+                    Contact Us{" "}
+                    <span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 12 12"
+                        fill="none"
+                      >
+                        <circle
+                          cx="6"
+                          cy="6"
+                          r="6"
+                          fill="url(#paint0_linear_65_66)"
+                        />
+                        <defs>
+                          <linearGradient
+                            id="paint0_linear_65_66"
+                            x1="6"
+                            y1="0"
+                            x2="6"
+                            y2="12"
+                            gradientUnits="userSpaceOnUse"
+                          >
+                            <stop stop-color="#BB9406" />
+                            <stop offset="1" stop-color="#433500" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </span>
+                  </button>
                 </div>
               </motion.div>
             </div>

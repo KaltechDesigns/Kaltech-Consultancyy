@@ -13,7 +13,7 @@ export const Footer = () => {
   return (
     <div className="bg-[#000] flex justify-center items-center py-8 md:py-16 lg:py-16 xl:py-16 2xl:py-16">
       <div className="w-[90%] md:w-[80%] lg:w-[80%] xl:w-[80%] 2xl:w-[80%] flex flex-col justify-center items-center">
-        <div className="relative 2xl:h-12 xl:h-12 lg:h-10 md:h-9 h-8 w-[50%] my-4 md:my-0 lg:my-0 xl:my-0 2xl:my-0">
+        <div className="relative h-12 w-[50%] my-4 md:my-0 lg:my-0 xl:my-0 2xl:my-0">
           <Image fill loading="lazy" alt="logo" src={Logo} />
         </div>
         <ul className="flex justify-around items-center flex-wrap gap-2 w-full md:w-[65%] lg:w-[65%] xl:w-[65%] 2xl:w-[65%] my-[4%] md:my-[2%] lg:my-[2%] xl:my-[2%] 2xl:my-[2%]">
@@ -31,7 +31,7 @@ export const Footer = () => {
               key={id}
             >
               <Link
-                className="font-[Oxanium] text-[#D6D6D6] font-[400] 2xl:text-lg xl:text-lg lg:text-base md:text-sm text-sm uppercase"
+                className="font-[Oxanium] text-[#D6D6D6] font-[400] text-lg uppercase"
                 href={cur.path}
               >
                 {cur.title}
@@ -66,6 +66,7 @@ export const Footer = () => {
               </svg>
             </Link>
           </motion.div>
+
           <motion.div
             initial={{ scale: 1, y: "0%" }}
             whileHover={{ scale: 1.2, y: "-20%" }}
@@ -80,6 +81,7 @@ export const Footer = () => {
               <InstagramIcon className="text-black text-xl" />
             </Link>
           </motion.div>
+
           <motion.div
             initial={{ scale: 1, y: "0%" }}
             whileHover={{ scale: 1.2, y: "-20%" }}
@@ -94,10 +96,37 @@ export const Footer = () => {
               <XIcon className="text-black text-xl" />
             </Link>
           </motion.div>
+
+          <motion.div
+            initial={{ scale: 1, y: "0%" }}
+            whileHover={{ scale: 1.2, y: "-20%" }}
+            transition={{ duration: 0.1, ease: "linear" }}
+            className="h-10 w-10 bg-white flex justify-center items-center rounded-full cursor-pointer"
+          >
+            <Link
+              className="h-full w-full flex justify-center items-center"
+              href="https://www.linkedin.com/company/kaltech-designs/"
+              target="_blank"
+            >
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="24" cy="24" r="24" fill="#F0F0F3" />
+                <path
+                  d="M18.9395 17C18.9392 17.5305 18.7282 18.0391 18.353 18.4139C17.9777 18.7888 17.4689 18.9993 16.9385 18.999C16.408 18.9988 15.8994 18.7878 15.5245 18.4125C15.1496 18.0373 14.9392 17.5285 14.9395 16.998C14.9397 16.4676 15.1507 15.959 15.5259 15.5841C15.9012 15.2092 16.41 14.9988 16.9405 14.999C17.4709 14.9993 17.9795 15.2103 18.3544 15.5855C18.7293 15.9608 18.9397 16.4696 18.9395 17ZM18.9995 20.48H14.9995V33H18.9995V20.48ZM25.3195 20.48H21.3395V33H25.2795V26.43C25.2795 22.77 30.0495 22.43 30.0495 26.43V33H33.9995V25.07C33.9995 18.9 26.9395 19.13 25.2795 22.16L25.3195 20.48Z"
+                  fill="black"
+                />
+              </svg>
+            </Link>
+          </motion.div>
         </div>
 
         <div className="border-t-[2px] border-[#FFFFFF]/30 w-full ">
-          <p className="text-center text-white py-4 text-[12px]  font-[Oxanium] font-[400]">
+          <p className="text-center text-white py-4 text-sm md:text-xl lg:text-xl xl:text-xl 2xl:text-xl font-[Oxanium] font-[400]">
             <span className="text-[#FFFFFF]/50">
               © 2024 | Alrights reserved by
             </span>{" "}
